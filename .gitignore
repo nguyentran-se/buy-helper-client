@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+#mine
+.feature.md
+
 # testing
 /coverage
 
