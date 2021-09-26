@@ -1,0 +1,5 @@
+export const USER_ROLE = {
+  BUYER: 'BUYER',
+  SUPPLIER: 'SUPPLIER',
+  TOWN_LEADER: 'TOWN_LEADER',
+};

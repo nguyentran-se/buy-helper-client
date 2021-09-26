@@ -1,7 +1,14 @@
-import React from "react";
+import { ThemeProvider } from '@mui/material';
+import React from 'react';
+import RenderRoutes from 'routers/RenderRoutes';
+import theme from './theme/theme';
 
 const App = () => {
-   return <div>App</div>;
+  return (
+    <ThemeProvider theme={theme}>
+      <RenderRoutes />
+    </ThemeProvider>
+  );
 };
 
 export default App;
