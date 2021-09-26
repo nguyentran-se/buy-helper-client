@@ -1,5 +1,5 @@
 const typography = {
-  fontFamily: 'Poppins',
+  fontFamily: 'Quicksand',
   fontWeightLight: 400,
   fontWeightRegular: 500,
   fontWeightMedium: 600,

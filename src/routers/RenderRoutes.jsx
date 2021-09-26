@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 
 const RenderRoutes = () => {
   return (
-    <Suspense fallback={<div>waiting...</div>}>
+    <Suspense fallback={<div></div>}>
       <Switch>
         {routes.map((route) => {
           const Guard = route.guard || Fragment;
