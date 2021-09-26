@@ -1,0 +1,24 @@
+//font
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+//anchor
+a {
+  text-decoration: none;
+  color: unset;
+  &:active,
+  &:visited {
+    color: unset;
+  }
+}
+
+body {
+  overflow-y: overlay;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 4px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #8bc34a;
+  }
+}
