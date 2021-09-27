@@ -12,6 +12,9 @@ import { Box } from '@mui/system';
 import foodSampleImg from 'assets/images/food-sample.png';
 import React from 'react';
 const StyledCard = styled(Card)(({ theme }) => ({
+  flexGrow: 1,
+  display: 'flex',
+  flexDirection: 'column',
   cursor: 'pointer',
   padding: '8px',
   fontSize: 1.5,
@@ -40,7 +43,9 @@ const ProductCard = () => {
       <ProductCardImg>
         <img src={foodSampleImg} alt="" />
       </ProductCardImg>
-      <CardContent>
+      <CardContent
+        sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
+      >
         <Typography
           variant="body2"
           color="textPrimary"
@@ -52,7 +57,7 @@ const ProductCard = () => {
           ducimus unde suscipit porro praesentium. Eaque excepturi inventore
           aspernatur enim nisi ea?
         </Typography>
-        <Typography noWrap fontWeight="bold">
+        <Typography noWrap fontWeight="bold" sx={{ mt: 'auto' }}>
           Còn lại: 86
         </Typography>
         <Box
