@@ -8,6 +8,9 @@
 #mine
 .feature.md
 
+#cache
+.eslintcache
+
 # testing
 /coverage
 

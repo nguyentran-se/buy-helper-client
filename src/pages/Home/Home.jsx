@@ -24,7 +24,15 @@ const Home = () => {
           {Array(32)
             .fill()
             .map((_, index) => (
-              <Grid key={index} item xs={12} sm={6} md={4} lg={3}>
+              <Grid
+                key={index}
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                lg={3}
+                sx={{ display: 'flex', flexDirection: 'column' }}
+              >
                 <ProductCard />
               </Grid>
             ))}
