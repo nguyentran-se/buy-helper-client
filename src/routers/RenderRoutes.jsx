@@ -2,12 +2,14 @@ import React, { Fragment, Suspense } from 'react';
 import routes from './routers';
 import { Route, Switch } from 'react-router-dom';
 import MainLayout from 'layouts/MainLayout';
-
+import Cart from 'pages/Cart/Cart';
 const RenderRoutes = () => {
   return (
-    <Switch>
-      <MainLayout>
-        <Suspense fallback={<div></div>}>
+    // <Switch> //route not need MainLayout
+    //   <Route component={Cart} path="/cart" exact />
+    <MainLayout>
+      <Suspense fallback={<div></div>}>
+        <Switch>
           {routes.map((route) => {
             if (route.layout !== 'MainLayout') return;
             const Guard = route.guard || Fragment;
@@ -34,9 +36,10 @@ const RenderRoutes = () => {
               />
             );
           })}
-        </Suspense>
-      </MainLayout>
-    </Switch>
+        </Switch>
+      </Suspense>
+    </MainLayout>
+    // </Switch>
   );
 };
 

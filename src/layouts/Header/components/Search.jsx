@@ -65,7 +65,7 @@ const Search = () => {
         />
         <StyledButton startIcon={<SearchIcon />}>Tìm kiếm</StyledButton>
       </StyledSearch>
-      <Box component={Link} to="#cart">
+      <Box component={Link} to="/cart">
         <Tooltip title="Giỏ hàng" arrow disableInteractive>
           <IconButton size="small" color="inherit">
             <Badge badgeContent={17} color="error">

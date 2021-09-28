@@ -1,18 +1,16 @@
 import { PATH_NAME } from 'configs';
 import { lazy } from 'react';
-// const MainLayout = lazy(() => import('layouts/MainLayout'));
-// import MainLayout from 'layouts/MainLayout';
+//pages
 const Home = lazy(() => import('pages/Home/Home'));
 const Cart = lazy(() => import('pages/Cart/Cart'));
-const Cate = lazy(() => import('pages/Cate/Cate'));
+const Error404View = lazy(() => import('pages/Error404View/Error404View'));
+
 const routes = [
   {
-    path: `${PATH_NAME.CATEGORY}/:slug`,
+    path: PATH_NAME.ROOT,
     exact: true,
-    guard: null,
     layout: 'MainLayout',
-    component: Cate,
-    requireRoles: null,
+    component: Home,
   },
   {
     path: PATH_NAME.CART,
@@ -23,10 +21,17 @@ const routes = [
     requireRoles: null,
   },
   {
-    path: PATH_NAME.ROOT,
+    path: `${PATH_NAME.ROOT}:slug`,
     exact: true,
+    guard: null,
     layout: 'MainLayout',
     component: Home,
+    requireRoles: null,
+  },
+  {
+    path: '*',
+    layout: 'MainLayout',
+    component: Error404View,
   },
 ];
 

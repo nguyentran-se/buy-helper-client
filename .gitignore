@@ -7,9 +7,12 @@
 
 #mine
 .feature.md
+.config-linters.md
 /conf
+
 #cache
 .eslintcache
+6
 
 # testing
 /coverage
