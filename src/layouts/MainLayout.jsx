@@ -4,7 +4,7 @@ import Header from './Header/Header';
 
 const MainLayout = ({ children }) => {
   return (
-    <div>
+    <div style={{ backgroundColor: '#F4F4F4', minHeight: '100vh' }}>
       <Header />
       <Container>
         <main>{children}</main>

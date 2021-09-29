@@ -9,7 +9,11 @@ a {
     color: unset;
   }
 }
-
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 body {
   overflow-y: overlay;
   overflow-x: hidden;
