@@ -48,7 +48,7 @@ const StyledTextField = styled(TextField)({
     textAlign: 'center',
   },
 });
-const CartProduct = ({ handleIncrement, handleDecrement, counter }) => {
+const CartProduct = ({ handleIncrement, handleDecrement, counter = 1 }) => {
   return (
     <StyledGridFieldContainer container>
       {/* Product */}
@@ -83,7 +83,7 @@ const CartProduct = ({ handleIncrement, handleDecrement, counter }) => {
           >
             <RemoveRounded fontSize="16px" />
           </ButtonBase>
-          <StyledTextField size="20px" defaultValue={1} />
+          <StyledTextField size="20px" defaultValue={counter} />
           <ButtonBase
             onClick={handleIncrement}
             sx={{ border: '1px solid', width: 28, borderRadius: '0 2px 2px 0' }}
