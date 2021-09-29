@@ -1,15 +1,4 @@
-import { DeleteSweepOutlined } from '@mui/icons-material';
-import {
-  Checkbox,
-  FormControlLabel,
-  Grid,
-  IconButton,
-  Stack,
-  Typography,
-} from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { Box } from '@mui/system';
-import productSample from 'assets/images/food-sample.png';
+import { Grid } from '@mui/material';
 import React from 'react';
 import CartProduct from './CartProduct';
 import CartProductsHeading from './CartProductsHeading';

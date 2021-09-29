@@ -2,7 +2,6 @@ import React, { Fragment, Suspense } from 'react';
 import routes from './routers';
 import { Route, Switch } from 'react-router-dom';
 import MainLayout from 'layouts/MainLayout';
-import Cart from 'pages/Cart/Cart';
 const RenderRoutes = () => {
   return (
     // <Switch> //route not need MainLayout
