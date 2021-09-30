@@ -13,7 +13,7 @@ import { useHistory } from 'react-router';
 const CartCheckout = () => {
   const history = useHistory();
   return (
-    <Stack spacing={2} sx={{ position: 'sticky', top: 2 }}>
+    <Stack spacing={2} sx={{ position: 'sticky', top: '16px' }}>
       <Card>
         <CardHeader
           action={<Button variant="text">Thay đổi</Button>}
