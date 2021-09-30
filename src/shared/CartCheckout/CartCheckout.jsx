@@ -10,7 +10,20 @@ import {
 import { Box } from '@mui/system';
 import React from 'react';
 import { useHistory } from 'react-router';
-const CartCheckout = () => {
+import PropTypes from 'prop-types';
+const propTypes = {
+  hasAction: PropTypes.bool,
+  finalPriceTitle: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+};
+const CartCheckout = ({
+  hasAction = true,
+  finalPriceTitle = 'Tổng cộng',
+  children,
+}) => {
   const history = useHistory();
   return (
     <Stack spacing={2} sx={{ position: 'sticky', top: '16px' }}>
@@ -84,7 +97,7 @@ const CartCheckout = () => {
         <CardContent>
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Typography variant="body1" color="textPrimary">
-              Tổng cộng
+              {finalPriceTitle}
             </Typography>{' '}
             <Box>
               <Typography
@@ -104,19 +117,23 @@ const CartCheckout = () => {
           </Box>
         </CardContent>
       </Card>
-      <Button
-        variant="contained"
-        sx={{
-          textTransform: 'capitalize',
-          height: 40,
-          fontSize: 16,
-        }}
-        onClick={() => history.push('/checkout/payment')}
-      >
-        Mua hàng (1)
-      </Button>
+      {hasAction && (
+        <Button
+          variant="contained"
+          sx={{
+            textTransform: 'capitalize',
+            height: 40,
+            fontSize: 16,
+          }}
+          onClick={() => history.push('/checkout/payment')}
+        >
+          Mua hàng (1)
+        </Button>
+      )}
+      {children}
     </Stack>
   );
 };
+CartCheckout.propTypes = propTypes;
 
 export default CartCheckout;

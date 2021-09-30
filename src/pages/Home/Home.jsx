@@ -5,7 +5,7 @@ import ProductCard from './components/ProductCard';
 
 const Home = () => {
   return (
-    <div className="buyhelper-home" style={{ paddingBottom: 50 }}>
+    <div className="buyhelper-home">
       <Grid container spacing={2} sx={{ alignItems: 'flex-start' }}>
         <Grid
           item
