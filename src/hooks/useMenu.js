@@ -1,9 +1,4 @@
-import {
-  EventNoteOutlined,
-  Logout,
-  PersonAdd,
-  Settings,
-} from '@mui/icons-material';
+import { EventNoteOutlined, Logout } from '@mui/icons-material';
 import { Avatar, Divider, ListItemIcon, Menu, MenuItem } from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';

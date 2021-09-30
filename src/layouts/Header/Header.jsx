@@ -1,4 +1,4 @@
-import { AppBar, Container, Toolbar, Typography } from '@mui/material';
+import { AppBar, Container, Toolbar } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React from 'react';
 import Logo from './components/Logo';

@@ -1,5 +1,7 @@
 import { createTheme } from '@mui/material';
 import typography from './typography';
+import { red } from '@mui/material/colors';
+
 //Color Palette: #388E3C #8BC34A #DCE775 #FFF59D
 let theme = createTheme({
   palette: {
@@ -9,6 +11,9 @@ let theme = createTheme({
       light: '#DCE775',
       dark: '#388E3C',
       contrastText: '#fff',
+    },
+    error: {
+      main: red[500],
     },
   },
   mixins: {

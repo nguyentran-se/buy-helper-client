@@ -9,12 +9,13 @@ import { Link } from 'react-router-dom';
 const StyledSearch = styled('div')(({ theme }) => ({
   position: 'relative',
   width: '100%',
-  height: 39,
+  height: 34,
   marginRight: theme.spacing(2),
 
   display: 'flex',
   alignItems: 'center',
 
+  overflow: 'hidden',
   backgroundColor: alpha(theme.palette.common.white, 0.15),
   borderRadius: theme.shape.borderRadius,
 }));
@@ -38,6 +39,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'textPrimary',
   width: '100%',
+  height: '100%',
   backgroundColor: theme.palette.common.white,
   borderRadius: theme.spacing(0.5, 0, 0, 0.5),
   '& .MuiInputBase-input': {
@@ -65,7 +67,7 @@ const Search = () => {
         />
         <StyledButton startIcon={<SearchIcon />}>Tìm kiếm</StyledButton>
       </StyledSearch>
-      <Box component={Link} to="#cart">
+      <Box component={Link} to="/checkout/cart">
         <Tooltip title="Giỏ hàng" arrow disableInteractive>
           <IconButton size="small" color="inherit">
             <Badge badgeContent={17} color="error">

@@ -2,7 +2,6 @@ import { AddShoppingCart } from '@mui/icons-material';
 import {
   Card,
   CardContent,
-  CardMedia,
   IconButton,
   Tooltip,
   Typography,
@@ -11,13 +10,14 @@ import { styled } from '@mui/material/styles';
 import { Box } from '@mui/system';
 import foodSampleImg from 'assets/images/food-sample.png';
 import React from 'react';
+import RatioImage from 'shared/RatioImage/RatioImage';
+
 const StyledCard = styled(Card)(({ theme }) => ({
   flexGrow: 1,
   display: 'flex',
   flexDirection: 'column',
   cursor: 'pointer',
   padding: '8px',
-  fontSize: 1.5,
   '&:hover': {
     boxShadow:
       '0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%)',
@@ -28,21 +28,11 @@ const StyledCard = styled(Card)(({ theme }) => ({
     '&:last-child': { paddingBottom: 0 },
   },
 }));
-const ProductCardImg = styled('div')({
-  position: 'relative',
-  paddingBottom: '100%',
-  '& img': {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-  },
-});
+
 const ProductCard = () => {
   return (
     <StyledCard variant="outlined">
-      <ProductCardImg>
-        <img src={foodSampleImg} alt="" />
-      </ProductCardImg>
+      <RatioImage src={foodSampleImg} alt="buyhelper" />
       <CardContent
         sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
       >

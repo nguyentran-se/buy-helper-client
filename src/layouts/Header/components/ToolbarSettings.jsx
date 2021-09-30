@@ -1,21 +1,8 @@
-import {
-  AccountCircle,
-  AccountCircleOutlined,
-  ShoppingCartOutlined,
-} from '@mui/icons-material';
-import {
-  Avatar,
-  Badge,
-  IconButton,
-  List,
-  ListItem,
-  Tooltip,
-  Typography,
-} from '@mui/material';
+import { AccountCircle } from '@mui/icons-material';
+import { IconButton, List, ListItem, Tooltip } from '@mui/material';
 import { styled } from '@mui/system';
 import { useMenu } from 'hooks';
 import React from 'react';
-import { Link } from 'react-router-dom';
 const StyledList = styled(List)(({ theme }) => ({
   display: 'flex',
   marginLeft: 'auto',
