@@ -10,7 +10,6 @@ const CartIntro = () => {
         severity="info"
         sx={{
           borderColor: (theme) => theme.palette.primary.main,
-          mt: '10px',
           alignItems: 'center',
           backgroundColor: 'rgb(232, 246, 222)',
           color: (theme) => theme.palette.primary.main,

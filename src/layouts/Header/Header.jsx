@@ -4,7 +4,10 @@ import React from 'react';
 import Logo from './components/Logo';
 import Search from './components/Search';
 import ToolbarSettings from './components/ToolbarSettings';
-const Offset = styled('div')(({ theme }) => theme.mixins.toolbar);
+const Offset = styled('div')(({ theme }) => ({
+  ...theme.mixins.toolbar,
+  marginBottom: 10,
+}));
 const Header = () => {
   return (
     <>
