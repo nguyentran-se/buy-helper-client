@@ -4,7 +4,6 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -20,7 +19,11 @@ const StyledList = styled(List)(({ theme }) => ({
       backgroundColor: theme.palette.primary.light,
     },
   },
-  '& .MuiListItemButton-root': { paddingTop: 0, paddingBottom: 0 },
+  '& .MuiListItemButton-root': {
+    paddingTop: 0,
+    paddingBottom: 0,
+    '&.active': { backgroundColor: theme.palette.primary.light },
+  },
 }));
 const StyledCollapse = styled(Collapse)(({ theme }) => ({
   '& .MuiListItemButton-root': {
@@ -30,7 +33,7 @@ const StyledCollapse = styled(Collapse)(({ theme }) => ({
 const dummyCategoryList = [
   {
     title: 'Category 1',
-    href: '/category/category1',
+    href: '/',
     isOpened: null,
     subList: null,
   },
@@ -41,11 +44,11 @@ const dummyCategoryList = [
     subList: [
       {
         subTitle: 'Subcate 21',
-        subHref: '/category/subcate21',
+        subHref: '/subcate21',
       },
       {
         subTitle: 'Subcate 22',
-        subHref: '/category/subcate22',
+        subHref: '/subcate22',
       },
     ],
   },
@@ -56,35 +59,35 @@ const dummyCategoryList = [
     subList: [
       {
         subTitle: 'Subcate 31',
-        subHref: '/category/subcate31',
+        subHref: '/subcate31',
       },
       {
         subTitle: 'Subcate 32',
-        subHref: '/category/subcate32',
+        subHref: '/subcate32',
       },
     ],
   },
   {
     title: 'Category 4',
-    href: '/category/category4',
+    href: '/category4',
     isOpened: null,
     subList: null,
   },
   {
     title: 'Category 5',
-    href: '/category/category5',
+    href: '/category5',
     isOpened: null,
     subList: null,
   },
   {
     title: 'Category 6',
-    href: '/category/category6',
+    href: '/category6',
     isOpened: null,
     subList: null,
   },
   {
     title: 'Category 7',
-    href: '/category/category7',
+    href: '/category7',
     isOpened: null,
     subList: null,
   },
@@ -95,11 +98,11 @@ const dummyCategoryList = [
     subList: [
       {
         subTitle: 'Combo 1',
-        subHref: '/category/combo1',
+        subHref: '/combo1',
       },
       {
         subTitle: 'Combo 2',
-        subHref: '/category/combo2',
+        subHref: '/combo2',
       },
     ],
   },

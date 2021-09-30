@@ -11,15 +11,25 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": ["react", "unused-imports"],
   "settings": {
     "react": {
       "version": "detect"
     }
   },
   "rules": {
-    "no-console": "warn",
+    "no-console": "off",
+    "react/prop-types": "off",
     "no-unused-vars": "off",
-    "react/prop-types": "off"
+    "unused-imports/no-unused-imports": "warn",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
   }
 }
