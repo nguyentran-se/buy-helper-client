@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
-import CartCheckout from './CartCheckout';
+import CartCheckout from '../../../shared/CartCheckout/CartCheckout';
 import CartProduct from './CartProduct';
 import CartProductsHeading from './CartProductsHeading';
 const CartProducts = () => {

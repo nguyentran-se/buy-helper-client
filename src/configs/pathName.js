@@ -6,8 +6,9 @@ export const PATH_NAME = {
   PAYMENT: '/checkout/payment',
   LOGIN: '/login',
   PRODUCTS: '/products',
+  ORDERS: '/orders',
+  CATEGORY: '/category',
   BUYER: '/buyer',
   SUPPLIER: '/supplier',
   TOWN_LEADER: '/town-leader',
-  CATEGORY: '/category',
 };

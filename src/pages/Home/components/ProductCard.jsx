@@ -29,7 +29,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   },
 }));
 
-const ProductCard = () => {
+const ProductCard = ({ handleClickShowSnack }) => {
   return (
     <StyledCard variant="outlined">
       <RatioImage src={foodSampleImg} alt="buyhelper" />
@@ -61,7 +61,11 @@ const ProductCard = () => {
             68.000 <span style={{ textDecoration: 'underline' }}>đ</span>
           </Typography>
           <Tooltip arrow title="Thêm vào giỏ">
-            <IconButton size="medium" color="primary">
+            <IconButton
+              size="medium"
+              color="primary"
+              onClick={handleClickShowSnack}
+            >
               <AddShoppingCart fontSize="large" />
             </IconButton>
           </Tooltip>
