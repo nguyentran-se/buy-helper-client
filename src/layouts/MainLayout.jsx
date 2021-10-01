@@ -10,7 +10,7 @@ const MainLayout = ({ children }) => {
         backgroundColor: '#F4F4F4',
         minHeight: '100vh',
         position: 'relative',
-        paddingBottom: 90,
+        paddingBottom: 140,
       }}
     >
       <Header />

@@ -1,11 +1,11 @@
 import React from 'react';
-import CartIntro from './components/CartIntro';
+import CartIntro from '../../shared/CartIntro/CartIntro';
 import CartProducts from './components/CartProducts';
 
 const Cart = () => {
   return (
-    <div className="buyhelper-cart" style={{ paddingBottom: '50px' }}>
-      <CartIntro />
+    <div className="buyhelper-cart">
+      <CartIntro title={'GIỎ HÀNG'} />
       <CartProducts />
     </div>
   );

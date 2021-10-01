@@ -48,13 +48,13 @@ const useMenu = () => {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem component={Link} to="#orders">
+        <MenuItem component={Link} to="/orders">
           <ListItemIcon>
             <EventNoteOutlined fontSize="medium" />
           </ListItemIcon>
           Đơn hàng của tôi
         </MenuItem>
-        <MenuItem component={Link} to="#user">
+        <MenuItem component={Link} to="/buyer">
           <Avatar /> Tài khoản của tôi
         </MenuItem>
         <Divider />

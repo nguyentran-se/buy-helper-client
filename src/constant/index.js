@@ -1,0 +1,1 @@
+export { paymentMethods } from './paymentMethods';
