@@ -1,4 +1,4 @@
-import { Button, Grid, Paper } from '@mui/material';
+import { Button, Grid, Paper, Typography } from '@mui/material';
 import CartCheckout from 'shared/CartCheckout/CartCheckout';
 import CartIntro from 'shared/CartIntro/CartIntro';
 import React from 'react';
@@ -60,6 +60,9 @@ const Payment = () => {
       >
         ĐẶT MUA
       </Button>
+      <Typography variant="subtitle1">
+        (Xin vui lòng kiểm tra lại đơn hàng trước khi Đặt Mua)
+      </Typography>
     </>
   );
 };

@@ -1,9 +1,14 @@
 import { Grid } from '@mui/material';
+import { useSnackbar } from 'notistack';
 import React from 'react';
 import CategoryList from './components/CategoryList';
 import ProductCard from './components/ProductCard';
 
 const Home = () => {
+  const { enqueueSnackbar } = useSnackbar();
+  const handleClickShowSnack = () => {
+    enqueueSnackbar('Thêm vào giỏ hàng thành công!', { variant: 'success' });
+  };
   return (
     <div className="buyhelper-home">
       <Grid container spacing={2} sx={{ alignItems: 'flex-start' }}>
@@ -30,7 +35,7 @@ const Home = () => {
                 lg={3}
                 sx={{ display: 'flex', flexDirection: 'column' }}
               >
-                <ProductCard />
+                <ProductCard handleClickShowSnack={handleClickShowSnack} />
               </Grid>
             ))}
         </Grid>
