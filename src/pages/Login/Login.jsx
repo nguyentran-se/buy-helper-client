@@ -15,22 +15,26 @@ import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
+import { useForm, Controller } from 'react-hook-form';
 const roles = [
   {
     value: 'buyer',
     label: 'NGƯỜI MUA HÀNG',
   },
   {
-    value: 'town',
+    value: 'town_leader',
     label: 'TỔ TRƯỞNG',
   },
   {
-    value: 'sup',
+    value: 'supplier',
     label: 'NHÀ CUNG CẤP',
   },
 ];
 const Login = () => {
   const history = useHistory();
+  const { handleSubmit, control } = useForm({
+    defaultValues: { role: 'buyer' },
+  });
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword);
@@ -38,9 +42,15 @@ const Login = () => {
   const handleMouseDownPassword = () => {
     setShowPassword(!showPassword);
   };
-  const handleOnSubmit = (e) => {
-    e.preventDefault();
-    history.replace('/category/category1');
+  const handleOnSubmit = (formData) => {
+    // console.log(formData);
+    //test login here
+    if (
+      formData.account === 'ad' &&
+      formData.password === 'ad' &&
+      formData.role === 'buyer'
+    )
+      setTimeout(() => history.replace('/category/category1'), 2000);
   };
   return (
     <Box maxWidth={500} sx={{ margin: '100px auto 0' }}>
@@ -62,56 +72,73 @@ const Login = () => {
       <Box
         component="form"
         noValidate
-        onSubmit={handleOnSubmit}
+        onSubmit={handleSubmit(handleOnSubmit)}
         sx={{ textAlign: 'center' }}
       >
         <Stack spacing={2}>
-          <TextField
-            type="text"
+          <Controller
+            control={control}
             name="account"
-            label="Tài khoản"
-            required
-            placeholder="Nhập tài khoản"
-            fullWidth
-            autoFocus
+            render={({ field: { onChange } }) => (
+              <TextField
+                type="text"
+                label="Tài khoản"
+                required
+                placeholder="Nhập tài khoản"
+                fullWidth
+                autoFocus
+                onChange={onChange}
+              />
+            )}
           />
-          <TextField
-            type="password"
+          <Controller
+            control={control}
             name="password"
-            label="Mật khẩu"
-            required
-            placeholder="Nhập mật khẩu"
-            fullWidth
-            InputProps={{
-              endAdornment: (
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                    edge="end"
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
+            render={({ field: { onChange } }) => (
+              <TextField
+                type={showPassword ? 'text' : 'password'}
+                label="Mật khẩu"
+                required
+                placeholder="Nhập mật khẩu"
+                fullWidth
+                onChange={onChange}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            )}
           />
-          <TextField
-            select
-            label="Vai trò"
-            defaultValue="buyer"
+          <Controller
             name="role"
-            // value={}
-            // onChange={}
-            helperText="Vui lòng chọn vai trò của bạn"
-          >
-            {roles.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
+            control={control}
+            render={({ field: { onChange } }) => (
+              <TextField
+                select
+                label="Vai trò"
+                defaultValue="buyer"
+                name="role"
+                onChange={onChange}
+                helperText="Vui lòng chọn vai trò của bạn"
+              >
+                {roles.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            )}
+          />
           <FormControlLabel
             sx={{ alignSelf: 'flex-start' }}
             control={<Checkbox />}

@@ -8,7 +8,10 @@ const RenderRoutes = () => {
     <Suspense fallback={<div></div>}>
       <Switch>
         {routes.map(
-          (route) => route.layout !== 'MainLayout' && <Route {...route} />,
+          (route) =>
+            route.layout !== 'MainLayout' && (
+              <Route {...route} key={route.path} />
+            ),
         )}
         <MainLayout>
           <Suspense fallback={<div></div>}>
