@@ -1,14 +1,14 @@
 import { Alert } from '@mui/material';
 import React from 'react';
 
-const Buyer = () => {
+const Register = () => {
   return (
     <div>
       <Alert variant="filled" severity="info">
-        This feature is in development staging
+        Register page is in development staging
       </Alert>
     </div>
   );
 };
 
-export default Buyer;
+export default Register;
