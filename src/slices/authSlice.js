@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
+  acc: null,
   isLoggedIn: false,
   role: null,
   error: null,
@@ -9,12 +10,16 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     loginSuccess: (state, action) => {
-      state.isLoggedIn = action.payload;
+      state.acc = action.payload.acc;
+      state.isLoggedIn = true;
+      state.role = action.payload.role;
+      state.error = null;
     },
     loginFail: (state, action) => {
+      state.acc = null;
       state.isLoggedIn = false;
-      state.error = action.payload;
       state.role = null;
+      state.error = action.payload;
     },
   },
 });
