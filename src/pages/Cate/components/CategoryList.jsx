@@ -7,6 +7,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { PATH_NAME } from 'configs';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 const StyledList = styled(List)(({ theme }) => ({
@@ -33,7 +34,7 @@ const StyledCollapse = styled(Collapse)(({ theme }) => ({
 const dummyCategoryList = [
   {
     title: 'Category 1',
-    href: '/',
+    href: PATH_NAME.CATEGORY + '/category1',
     isOpened: null,
     subList: null,
   },
@@ -44,11 +45,11 @@ const dummyCategoryList = [
     subList: [
       {
         subTitle: 'Subcate 21',
-        subHref: '/subcate21',
+        subHref: PATH_NAME.CATEGORY + '/subcate21',
       },
       {
         subTitle: 'Subcate 22',
-        subHref: '/subcate22',
+        subHref: PATH_NAME.CATEGORY + '/subcate22',
       },
     ],
   },
@@ -59,35 +60,35 @@ const dummyCategoryList = [
     subList: [
       {
         subTitle: 'Subcate 31',
-        subHref: '/subcate31',
+        subHref: PATH_NAME.CATEGORY + '/subcate31',
       },
       {
         subTitle: 'Subcate 32',
-        subHref: '/subcate32',
+        subHref: PATH_NAME.CATEGORY + '/subcate32',
       },
     ],
   },
   {
     title: 'Category 4',
-    href: '/category4',
+    href: PATH_NAME.CATEGORY + '/category4',
     isOpened: null,
     subList: null,
   },
   {
     title: 'Category 5',
-    href: '/category5',
+    href: PATH_NAME.CATEGORY + '/category5',
     isOpened: null,
     subList: null,
   },
   {
     title: 'Category 6',
-    href: '/category6',
+    href: PATH_NAME.CATEGORY + '/category6',
     isOpened: null,
     subList: null,
   },
   {
     title: 'Category 7',
-    href: '/category7',
+    href: PATH_NAME.CATEGORY + '/category7',
     isOpened: null,
     subList: null,
   },
@@ -98,11 +99,11 @@ const dummyCategoryList = [
     subList: [
       {
         subTitle: 'Combo 1',
-        subHref: '/combo1',
+        subHref: PATH_NAME.CATEGORY + '/combo1',
       },
       {
         subTitle: 'Combo 2',
-        subHref: '/combo2',
+        subHref: PATH_NAME.CATEGORY + '/combo2',
       },
     ],
   },
