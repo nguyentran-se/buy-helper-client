@@ -70,7 +70,7 @@ const useMenu = () => {
           </ListItemIcon>
           Settings
         </MenuItem> */}
-        <MenuItem>
+        <MenuItem component={Link} to="/">
           <ListItemIcon>
             <Logout fontSize="medium" />
           </ListItemIcon>

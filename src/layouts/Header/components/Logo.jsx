@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from 'assets/images/buyhelper-logo.png';
 import { styled } from '@mui/system';
+import { PATH_NAME } from 'configs';
 const WIDTH_LOGO = 120;
 const HEIGHT_LOGO = 60;
 const StyledLogo = styled(Link)({
@@ -25,7 +26,7 @@ const StyledLogo = styled(Link)({
 const Logo = () => {
   return (
     <div style={{ width: WIDTH_LOGO, height: HEIGHT_LOGO, flexShrink: 0 }}>
-      <StyledLogo to="/">
+      <StyledLogo to={PATH_NAME.CATEGORY + '/category1'}>
         <img src={logo} alt="" />
       </StyledLogo>
     </div>
