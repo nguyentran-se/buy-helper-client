@@ -8,7 +8,7 @@ const CartProducts = () => {
   return (
     <Grid container spacing={2}>
       {/* LEFT */}
-      <Grid item lg={9}>
+      <Grid item xs={12} sm={12} md={9} lg={9}>
         {/* Field: Don gia, ... */}
         <Box
           sx={{
@@ -34,7 +34,7 @@ const CartProducts = () => {
       </Grid>
 
       {/* RIGHT */}
-      <Grid item lg={3}>
+      <Grid item xs={12} sm={6} md={3} lg={3}>
         <CartCheckout />
       </Grid>
     </Grid>

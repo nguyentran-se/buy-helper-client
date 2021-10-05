@@ -57,7 +57,7 @@ const Search = () => {
         alignItems: 'center',
         flex: 1,
         maxWidth: 888,
-        ml: 11,
+        ml: [0, 3, 11],
       }}
     >
       <StyledSearch>
@@ -71,7 +71,7 @@ const Search = () => {
         <Tooltip title="Giỏ hàng" arrow disableInteractive>
           <IconButton size="small" color="inherit">
             <Badge badgeContent={17} color="error">
-              <ShoppingCartOutlined />
+              <ShoppingCartOutlined sx={{ fontSize: '28px' }} />
             </Badge>
           </IconButton>
         </Tooltip>

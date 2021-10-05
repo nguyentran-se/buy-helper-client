@@ -4,7 +4,7 @@ import React from 'react';
 const Orders = () => {
   return (
     <div>
-      <Alert variant="outlined" severity="error">
+      <Alert variant="filled" severity="info">
         This feature is in development staging
       </Alert>
     </div>
