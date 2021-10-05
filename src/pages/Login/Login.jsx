@@ -71,7 +71,7 @@ const Login = () => {
     }
   };
   return (
-    <Box maxWidth={500} sx={{ margin: '100px auto 0' }}>
+    <Box maxWidth={500} sx={{ margin: '72px auto 0', pl: 2, pr: 2 }}>
       <Box
         sx={{
           display: 'flex',

@@ -52,11 +52,18 @@ const CartProduct = ({ handleIncrement, handleDecrement, counter = 1 }) => {
   return (
     <StyledGridFieldContainer container>
       {/* Product */}
-      <Grid item lg={5} pr={6} pl={'6px'}>
+      <Grid item xs={4} sm={5} md={5} lg={5} pr={6} pl={'6px'}>
         <Box sx={{ display: 'flex', alignItems: 'center', padding: '16px 0' }}>
           <Checkbox />
           {/* <RatioImage src={productSample} /> */}
-          <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
+          <Stack
+            direction="row"
+            spacing={1}
+            sx={{
+              alignItems: 'center',
+              flexDirection: { xs: 'column', sm: 'row' },
+            }}
+          >
             <img src={productSample} alt="" style={{ width: 78, height: 78 }} />
             <Typography variant="body1" className="line-clamp--2">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
@@ -67,10 +74,10 @@ const CartProduct = ({ handleIncrement, handleDecrement, counter = 1 }) => {
           </Stack>
         </Box>
       </Grid>
-      <StyledGridFieldItem item lg={2} pr={2}>
+      <StyledGridFieldItem item xs={2} sm={2} md={2} lg={2} pr={2}>
         <Typography variant="body1">{'68.000'}đ</Typography>
       </StyledGridFieldItem>
-      <StyledGridFieldItem item lg={2} pr={2}>
+      <StyledGridFieldItem item xs={3} sm={2} md={2} lg={2} pr={2}>
         {/* <ButtonGroup
           size="small"
           aria-label="small outlined button group"
@@ -93,12 +100,19 @@ const CartProduct = ({ handleIncrement, handleDecrement, counter = 1 }) => {
         </Stack>
         {/* </ButtonGroup> */}
       </StyledGridFieldItem>
-      <StyledGridFieldItem item lg={2} pr={2}>
+      <StyledGridFieldItem item xs={2} sm={2} md={2} lg={2} pr={2}>
         <Typography variant="body1" color="error" fontWeight="600">
           {'68.000'}đ
         </Typography>
       </StyledGridFieldItem>
-      <StyledGridFieldItem item lg={1} sx={{ justifyContent: 'center' }}>
+      <StyledGridFieldItem
+        item
+        xs={1}
+        sm={1}
+        md={1}
+        lg={1}
+        sx={{ justifyContent: 'center' }}
+      >
         <IconButton sx={{ marginLeft: '-6px' }}>
           <DeleteOutlined
           //onclick

@@ -14,21 +14,37 @@ const StyledList = styled(List)(({ theme }) => ({
   width: '100%',
   maxWidth: 360,
   backgroundColor: 'background.paper',
+  '& .category-heading': {
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: 0,
+      paddingRight: 0,
+    },
+  },
   '& .MuiListItem-root:not(.category-heading)': {
     padding: 0,
     '&:hover': {
       backgroundColor: theme.palette.primary.light,
     },
+    '& .MuiListItemText-root': {
+      minWidth: '72px',
+    },
   },
   '& .MuiListItemButton-root': {
     paddingTop: 0,
     paddingBottom: 0,
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: 0,
+      paddingRight: 0,
+    },
     '&.active': { backgroundColor: theme.palette.primary.light },
   },
 }));
 const StyledCollapse = styled(Collapse)(({ theme }) => ({
   '& .MuiListItemButton-root': {
     paddingLeft: theme.spacing(3),
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: theme.spacing(1),
+    },
   },
 }));
 const dummyCategoryList = [
@@ -152,7 +168,10 @@ const CategoryList = () => {
                       to={subCate.subHref}
                       exact
                     >
-                      <ListItemText primary={subCate.subTitle} />
+                      <ListItemText
+                        primary={subCate.subTitle}
+                        sx={{ minWidth: '72px' }}
+                      />
                     </ListItemButton>
                   </ListItem>
                 ))}
