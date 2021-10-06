@@ -11,6 +11,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 import { useHistory } from 'react-router';
 import PropTypes from 'prop-types';
+import CartCheckoutUser from 'shared/CartCheckoutUser/CartCheckoutUser';
 const propTypes = {
   hasAction: PropTypes.bool,
   finalPriceTitle: PropTypes.string,
@@ -43,37 +44,7 @@ const CartCheckout = ({
           sx={{ pb: 0 }}
         />
         <CardContent sx={{ pt: 1, '&:last-child': { pb: 2 } }}>
-          <Stack spacing={1}>
-            <Stack
-              direction="row"
-              spacing={1}
-              divider={<Divider orientation="vertical" flexItem />}
-            >
-              <Typography
-                variant="subtitle1"
-                component="h3"
-                fontWeight="700"
-                color="textPrimary"
-              >
-                Nguyễn Văn User
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                component="h3"
-                fontWeight="700"
-                color="textPrimary"
-              >
-                0905 123 456
-              </Typography>
-            </Stack>
-            <Typography variant="body2" color="textPrimary">
-              (315) 732-0514 55 Sanger Ave New Hartford, New York(NY), 13413
-            </Typography>
-            <Typography variant="body2" color="textPrimary">
-              (Địa chỉ giao hàng thuộc vùng giãn cách, thời gian giao hàng có
-              thể chậm hơn dự kiến)
-            </Typography>
-          </Stack>
+          <CartCheckoutUser />
         </CardContent>
       </Card>
       <Card>

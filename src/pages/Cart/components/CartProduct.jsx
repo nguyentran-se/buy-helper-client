@@ -12,6 +12,7 @@ import { styled } from '@mui/material/styles';
 import { Box } from '@mui/system';
 import productSample from 'assets/images/food-sample.png';
 import React from 'react';
+import ProductInfo from 'shared/ProductInfo/ProductInfo';
 
 export const StyledGridFieldContainer = styled(Grid)(({ theme }) => ({
   backgroundColor: theme.palette.common.white,
@@ -56,22 +57,7 @@ const CartProduct = ({ handleIncrement, handleDecrement, counter = 1 }) => {
         <Box sx={{ display: 'flex', alignItems: 'center', padding: '16px 0' }}>
           <Checkbox />
           {/* <RatioImage src={productSample} /> */}
-          <Stack
-            direction="row"
-            spacing={1}
-            sx={{
-              alignItems: 'center',
-              flexDirection: { xs: 'column', sm: 'row' },
-            }}
-          >
-            <img src={productSample} alt="" style={{ width: 78, height: 78 }} />
-            <Typography variant="body1" className="line-clamp--2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-              ducimus facere eum autem cupiditate? Et consectetur nulla
-              voluptatum minima, omnis, esse error delectus placeat accusantium
-              aliquam totam, natus nesciunt dolorem.
-            </Typography>
-          </Stack>
+          <ProductInfo productImg={productSample} />
         </Box>
       </Grid>
       <StyledGridFieldItem item xs={2} sm={2} md={2} lg={2} pr={2}>

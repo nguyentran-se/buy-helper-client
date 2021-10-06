@@ -100,7 +100,7 @@ const PaymentSuccess = () => {
               <Typography
                 component={Link}
                 to={`/orders/detail/${order_code}`}
-                target="_blank"
+                // target="_blank"
                 sx={{
                   color: (theme) => `${theme.palette.primary.main} !important`,
                 }}

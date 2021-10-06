@@ -9,6 +9,7 @@ export const PATH_NAME = {
   PAYMENT_SUCCESS: '/checkout/payment/success',
   PRODUCTS: '/products',
   ORDERS: '/orders',
+  ORDER_DETAIL: '/orders/detail/:slug',
   CATEGORY: '/category',
   BUYER: '/buyer',
   SUPPLIER: '/supplier',

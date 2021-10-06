@@ -7,8 +7,8 @@ import productSample from 'assets/images/food-sample.png';
 import { Box } from '@mui/system';
 const PaymentProduct = () => {
   const tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
-  const date = tomorrow.getDate();
-  const month = tomorrow.getMonth() + 1;
+  const date = '0' + tomorrow.getDate().toString();
+  const month = '0' + (tomorrow.getMonth() + 1).toString();
   return (
     <StyledGridFieldContainer container sx={{ p: '0 20px' }}>
       {/* Product */}
@@ -36,7 +36,7 @@ const PaymentProduct = () => {
       </StyledGridFieldItem>
       <StyledGridFieldItem item lg={2} sx={{ justifyContent: 'center' }}>
         <Typography variant="body1" color="#8BC34A" fontWeight="600">
-          Giao vào ngày mai {`(ngày ${date} tháng ${month})`}
+          Giao vào ngày mai {`${date.slice(-2)}/${month.slice(-2)}`}
         </Typography>
       </StyledGridFieldItem>
     </StyledGridFieldContainer>

@@ -12,6 +12,7 @@ const PaymentSuccess = lazy(() =>
   import('pages/PaymentSuccess/PaymentSuccess'),
 );
 const Orders = lazy(() => import('pages/Orders/Orders'));
+const OrderDetail = lazy(() => import('pages/OrderDetail/OrderDetail'));
 const Buyer = lazy(() => import('pages/Buyer/Buyer'));
 const Cate = lazy(() => import('pages/Cate/Cate'));
 
@@ -68,6 +69,14 @@ const routes = [
     guard: AuthGuard,
     layout: 'MainLayout',
     component: Orders,
+    requireRoles: null,
+  },
+  {
+    path: PATH_NAME.ORDER_DETAIL,
+    exact: true,
+    // guard: AuthGuard,
+    layout: 'MainLayout',
+    component: OrderDetail,
     requireRoles: null,
   },
   {
