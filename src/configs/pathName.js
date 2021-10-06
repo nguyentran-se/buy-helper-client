@@ -6,6 +6,7 @@ export const PATH_NAME = {
   REGISTER: '/register',
   CART: '/checkout/cart',
   PAYMENT: '/checkout/payment',
+  PAYMENT_SUCCESS: '/checkout/payment/success',
   PRODUCTS: '/products',
   ORDERS: '/orders',
   CATEGORY: '/category',

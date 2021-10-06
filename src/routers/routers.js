@@ -8,6 +8,9 @@ const Login = lazy(() => import('pages/Login/Login'));
 const Register = lazy(() => import('pages/Register/Register'));
 const Cart = lazy(() => import('pages/Cart/Cart'));
 const Payment = lazy(() => import('pages/Payment/Payment'));
+const PaymentSuccess = lazy(() =>
+  import('pages/PaymentSuccess/PaymentSuccess'),
+);
 const Orders = lazy(() => import('pages/Orders/Orders'));
 const Buyer = lazy(() => import('pages/Buyer/Buyer'));
 const Cate = lazy(() => import('pages/Cate/Cate'));
@@ -49,6 +52,14 @@ const routes = [
     guard: AuthGuard,
     layout: 'MainLayout',
     component: Payment,
+    requireRoles: null,
+  },
+  {
+    path: PATH_NAME.PAYMENT_SUCCESS,
+    exact: true,
+    guard: AuthGuard,
+    layout: 'MainLayout',
+    component: PaymentSuccess,
     requireRoles: null,
   },
   {
