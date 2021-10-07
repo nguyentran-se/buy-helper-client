@@ -14,4 +14,5 @@ export const PATH_NAME = {
   BUYER: '/buyer',
   SUPPLIER: '/supplier',
   TOWN_LEADER: '/town-leader',
+  CATEGORY_GENRE: '/category/category1',
 };

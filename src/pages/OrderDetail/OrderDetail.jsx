@@ -16,6 +16,7 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import CartCheckoutUser from 'shared/CartCheckoutUser/CartCheckoutUser';
 import OrderDetailProduct from './components/OrderDetailProduct';
+const steps = ['Chờ xác nhận', 'Đang xử lí', 'Đang vận chuyển', 'Đã giao'];
 const OrderDetail = () => {
   const { slug } = useParams();
   const tomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
@@ -30,18 +31,11 @@ const OrderDetail = () => {
         Trạng thái đơn hàng
       </Typography>
       <Stepper activeStep={2} alternativeLabel>
-        <Step>
-          <StepLabel>Chờ xác nhận</StepLabel>
-        </Step>
-        <Step>
-          <StepLabel>Chuẩn bị</StepLabel>
-        </Step>
-        <Step>
-          <StepLabel>Đang vận chuyển</StepLabel>
-        </Step>
-        <Step>
-          <StepLabel>Đã giao</StepLabel>
-        </Step>
+        {steps.map((st) => (
+          <Step key={st}>
+            <StepLabel>{st}</StepLabel>
+          </Step>
+        ))}
       </Stepper>
       <Grid container sx={{ mt: 2 }}>
         <Grid item xs={12} md={4} sx={{ pl: 0 }}>
