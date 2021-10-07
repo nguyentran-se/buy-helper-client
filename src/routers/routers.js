@@ -8,7 +8,11 @@ const Login = lazy(() => import('pages/Login/Login'));
 const Register = lazy(() => import('pages/Register/Register'));
 const Cart = lazy(() => import('pages/Cart/Cart'));
 const Payment = lazy(() => import('pages/Payment/Payment'));
+const PaymentSuccess = lazy(() =>
+  import('pages/PaymentSuccess/PaymentSuccess'),
+);
 const Orders = lazy(() => import('pages/Orders/Orders'));
+const OrderDetail = lazy(() => import('pages/OrderDetail/OrderDetail'));
 const Buyer = lazy(() => import('pages/Buyer/Buyer'));
 const Cate = lazy(() => import('pages/Cate/Cate'));
 
@@ -52,11 +56,27 @@ const routes = [
     requireRoles: null,
   },
   {
+    path: PATH_NAME.PAYMENT_SUCCESS,
+    exact: true,
+    guard: AuthGuard,
+    layout: 'MainLayout',
+    component: PaymentSuccess,
+    requireRoles: null,
+  },
+  {
     path: PATH_NAME.ORDERS,
     exact: true,
     guard: AuthGuard,
     layout: 'MainLayout',
     component: Orders,
+    requireRoles: null,
+  },
+  {
+    path: PATH_NAME.ORDER_DETAIL,
+    exact: true,
+    // guard: AuthGuard,
+    layout: 'MainLayout',
+    component: OrderDetail,
     requireRoles: null,
   },
   {

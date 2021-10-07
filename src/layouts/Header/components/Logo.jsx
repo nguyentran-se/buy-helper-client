@@ -26,7 +26,7 @@ const StyledLogo = styled(Link)({
 const Logo = () => {
   return (
     <div style={{ width: WIDTH_LOGO, height: HEIGHT_LOGO, flexShrink: 0 }}>
-      <StyledLogo to={PATH_NAME.CATEGORY + '/category1'}>
+      <StyledLogo to={PATH_NAME.CATEGORY_GENRE}>
         <img src={logo} alt="" />
       </StyledLogo>
     </div>

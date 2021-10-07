@@ -2,6 +2,7 @@ import React, { Fragment, Suspense } from 'react';
 import routes from './routers';
 import { Route, Switch } from 'react-router-dom';
 import MainLayout from 'layouts/MainLayout';
+import ScrollTopOnNavigate from 'HOCs/ScrollTopOnNavigate';
 const RenderRoutes = () => {
   return (
     //route not need MainLayout
@@ -32,7 +33,9 @@ const RenderRoutes = () => {
                       <Guard>
                         {/* <Layout> */}
                         {/* <RoleRoute> */}
-                        <Component {...props} />
+                        <ScrollTopOnNavigate>
+                          <Component {...props} />
+                        </ScrollTopOnNavigate>
                         {/* </RoleRoute> */}
                         {/* </Layout> */}
                       </Guard>

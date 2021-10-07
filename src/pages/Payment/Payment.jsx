@@ -2,11 +2,12 @@ import { Button, Grid, Paper, Typography } from '@mui/material';
 import CartCheckout from 'shared/CartCheckout/CartCheckout';
 import CartIntro from 'shared/CartIntro/CartIntro';
 import React from 'react';
-// import { useHistory } from 'react-router';
+import { useHistory, useRouteMatch } from 'react-router';
 import PaymentProduct from './components/PaymentProduct';
 import PaymentMethods from './components/PaymentMethods';
 const Payment = () => {
-  // const history = useHistory();
+  const history = useHistory();
+  const matchPath = useRouteMatch().path;
   return (
     <>
       <CartIntro title="1. Đơn hàng" />
@@ -28,7 +29,7 @@ const Payment = () => {
         {/* RIGHT */}
         <Grid item lg={3} sx={{ pt: 1 }}>
           <CartCheckout hasAction={false} finalPriceTitle={'Thành tiền'}>
-            <Paper sx={{ padding: '8px 16px' }}>
+            <Paper sx={{ padding: '8px 16px', mb: '16px !important' }}>
               <span
                 style={{
                   marginBottom: '0px',
@@ -55,7 +56,7 @@ const Payment = () => {
           width: 350,
         }}
         onClick={() => {
-          // history.push('/');
+          history.push(matchPath + '/success');
         }}
       >
         ĐẶT MUA

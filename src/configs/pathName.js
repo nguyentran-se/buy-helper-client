@@ -6,10 +6,13 @@ export const PATH_NAME = {
   REGISTER: '/register',
   CART: '/checkout/cart',
   PAYMENT: '/checkout/payment',
+  PAYMENT_SUCCESS: '/checkout/payment/success',
   PRODUCTS: '/products',
   ORDERS: '/orders',
+  ORDER_DETAIL: '/orders/detail/:slug',
   CATEGORY: '/category',
   BUYER: '/buyer',
   SUPPLIER: '/supplier',
   TOWN_LEADER: '/town-leader',
+  CATEGORY_GENRE: '/category/category1',
 };
