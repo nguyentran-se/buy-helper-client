@@ -4,10 +4,10 @@
 a {
   text-decoration: none;
   color: unset;
-  &:active,
-  &:visited {
-    color: unset;
-  }
+  // &:active,
+  // &:visited {
+  //   color: unset;
+  // }
 }
 img {
   display: block;

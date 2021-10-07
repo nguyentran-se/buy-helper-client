@@ -22,6 +22,15 @@ let theme = createTheme({
     },
   },
   typography: { ...typography },
+  components: {
+    MuiStep: {
+      styleOverrides: {
+        root: {
+          '& .MuiSvgIcon-root': { fontSize: '24px' },
+        },
+      },
+    },
+  },
 });
 theme = createTheme(theme, {
   components: {
