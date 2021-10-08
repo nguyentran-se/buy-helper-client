@@ -3,7 +3,7 @@ import { lazy } from 'react';
 import AuthGuard from 'guards/AuthGuard';
 //pages
 const Error404View = lazy(() => import('pages/Error404View/Error404View'));
-const Home = lazy(() => import('pages/Home/Home'));
+const HomeIntro = lazy(() => import('pages/HomeIntro/HomeIntro'));
 const Login = lazy(() => import('pages/Login/Login'));
 const Register = lazy(() => import('pages/Register/Register'));
 const Cart = lazy(() => import('pages/Cart/Cart'));
@@ -20,8 +20,8 @@ const routes = [
   {
     path: PATH_NAME.ROOT,
     exact: true,
-    layout: 'HomeLayout',
-    component: Home,
+    layout: 'HomeIntroLayout',
+    component: HomeIntro,
   },
   {
     path: PATH_NAME.LOGIN,
