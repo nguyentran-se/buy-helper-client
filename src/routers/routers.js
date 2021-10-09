@@ -15,6 +15,7 @@ const Orders = lazy(() => import('pages/Orders/Orders'));
 const OrderDetail = lazy(() => import('pages/OrderDetail/OrderDetail'));
 const Buyer = lazy(() => import('pages/Buyer/Buyer'));
 const Cate = lazy(() => import('pages/Cate/Cate'));
+const Provider = lazy(() => import('pages/Provider/Provider'));
 
 const routes = [
   {
@@ -22,6 +23,14 @@ const routes = [
     exact: true,
     layout: 'HomeIntroLayout',
     component: HomeIntro,
+  },
+  {
+    path: PATH_NAME.PROVIDER,
+    exact: true,
+    guard: null,
+    layout: 'ProviderLayout',
+    component: Provider,
+    requireRoles: null,
   },
   {
     path: PATH_NAME.LOGIN,
@@ -74,7 +83,7 @@ const routes = [
   {
     path: PATH_NAME.ORDER_DETAIL,
     exact: true,
-    // guard: AuthGuard,
+    guard: AuthGuard,
     layout: 'MainLayout',
     component: OrderDetail,
     requireRoles: null,
