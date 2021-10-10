@@ -6,21 +6,26 @@ import React, { useState } from 'react';
 import ProviderAppBar from './components/ProviderAppBar';
 import ProviderDrawer from './components/ProviderDrawer';
 
-const providerTheme = createTheme({
-  mixins: {
-    toolbar: {
-      minHeight: 64,
+const providerTheme = (mode) => {
+  return createTheme({
+    palette: {
+      mode: mode ? 'light' : 'dark',
     },
-  },
-  typography: {
-    fontFamily: 'Roboto',
-    fontSize: 13,
-    fontWeightLight: 400,
-    fontWeightRegular: 500,
-    fontWeightMedium: 600,
-    fontWeightBold: 700,
-  },
-});
+    mixins: {
+      toolbar: {
+        minHeight: 64,
+      },
+    },
+    typography: {
+      fontFamily: 'Roboto',
+      fontSize: 13,
+      fontWeightLight: 400,
+      fontWeightRegular: 500,
+      fontWeightMedium: 600,
+      fontWeightBold: 700,
+    },
+  });
+};
 const StyledMain = styled('main', {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
@@ -36,10 +41,17 @@ const StyledMain = styled('main', {
 }));
 const ProviderLayout = ({ children }) => {
   const [open, setOpen] = useState(true);
+  // true:light, false:dark
+  const [mode, setMode] = useState(true);
   return (
-    <ThemeProvider theme={providerTheme}>
+    <ThemeProvider theme={providerTheme(mode)}>
       <Box>
-        <ProviderAppBar toggleDrawer={() => setOpen(!open)} open={open} />
+        <ProviderAppBar
+          toggleMode={() => setMode(!mode)}
+          toggleDrawer={() => setOpen(!open)}
+          mode={mode}
+          open={open}
+        />
         <ProviderDrawer open={open} />
       </Box>
       <StyledMain open={open}>

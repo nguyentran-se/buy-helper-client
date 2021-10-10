@@ -1,8 +1,18 @@
-import { AppBar, IconButton, Toolbar, Typography } from '@mui/material';
-import React from 'react';
+import { DarkMode, LightMode, Menu, Public } from '@mui/icons-material';
+import {
+  AppBar,
+  Button,
+  IconButton,
+  MenuItem,
+  Toolbar,
+  Tooltip,
+  Typography,
+} from '@mui/material';
 import { styled } from '@mui/system';
-import { Menu } from '@mui/icons-material';
 import { PROVIDER_DRAWER_WIDTH } from 'constant';
+import { useMenu } from 'hooks';
+import React from 'react';
+
 const StyledAppBar = styled(AppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
@@ -16,16 +26,45 @@ const StyledAppBar = styled(AppBar, {
     left: PROVIDER_DRAWER_WIDTH,
   }),
 }));
-const ProviderAppBar = ({ toggleDrawer, open }) => {
+
+const ProviderAppBar = ({ toggleMode, toggleDrawer, mode, open }) => {
+  const { handleClickToShowMenu, StyledMenu } = useMenu();
   return (
     <StyledAppBar position="sticky" open={open} elevation={2}>
       <Toolbar>
-        <IconButton color="inherit" onClick={toggleDrawer}>
-          <Menu fontSize="large" />
-        </IconButton>
+        <Tooltip title="Dashboard" arrow disableInteractive>
+          <IconButton color="inherit" onClick={toggleDrawer}>
+            <Menu fontSize="large" />
+          </IconButton>
+        </Tooltip>
         <Typography variant="h6" component="h2">
           Provider Dashboard
         </Typography>
+        <Tooltip title="Language" arrow disableInteractive>
+          <Button
+            startIcon={<Public fontSize="large" />}
+            color="inherit"
+            onClick={handleClickToShowMenu}
+            sx={{ ml: 'auto' }}
+            size="large"
+          >
+            English
+          </Button>
+        </Tooltip>
+
+        <StyledMenu>
+          <MenuItem>English</MenuItem>
+          <MenuItem>Tiếng Việt</MenuItem>
+        </StyledMenu>
+        <Tooltip title="Theme" arrow disableInteractive>
+          <IconButton color="inherit" onClick={toggleMode}>
+            {mode ? (
+              <LightMode fontSize="large" />
+            ) : (
+              <DarkMode fontSize="large" />
+            )}
+          </IconButton>
+        </Tooltip>
       </Toolbar>
     </StyledAppBar>
   );
