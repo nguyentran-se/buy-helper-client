@@ -1,0 +1,13 @@
+{
+  "ACCOUNT": "Tài khoản",
+  "REPORT": "Báo cáo",
+  "PRODUCT": "Sản phẩm",
+  "PRODUCTS": "Danh sách",
+  "ADD_PRODUCT": "Thêm sản phẩm",
+  "PROVIDER": "Nhà cung cấp",
+  "STATISTIC": "Thống kê",
+  "TOOLTIP": {
+    "LANGUAGE": "Ngôn ngữ",
+    "THEME": "Giao diện"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "ACCOUNT": "Account",
+  "REPORT": "Report",
+  "PRODUCT": "Product",
+  "PRODUCTS": "Products",
+  "ADD_PRODUCT": "Add Product",
+  "PROVIDER": "Provider",
+  "STATISTIC": "Statistic",
+  "TOOLTIP": {
+    "LANGUAGE": "Language",
+    "THEME": "Theme"
+  }
+}

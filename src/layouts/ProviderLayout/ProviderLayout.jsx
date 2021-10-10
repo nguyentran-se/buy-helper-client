@@ -5,7 +5,9 @@ import React, { useState } from 'react';
 
 import ProviderAppBar from './components/ProviderAppBar';
 import ProviderDrawer from './components/ProviderDrawer';
-
+//locales
+import 'locales/i18nProvider';
+import { useTranslation } from 'react-i18next';
 const providerTheme = (mode) => {
   return createTheme({
     palette: {
@@ -40,19 +42,27 @@ const StyledMain = styled('main', {
   }),
 }));
 const ProviderLayout = ({ children }) => {
+  const { i18n, t: translate } = useTranslation();
   const [open, setOpen] = useState(true);
   // true:light, false:dark
   const [mode, setMode] = useState(true);
+  // const [language, setLanguage] = useState('en');
+  const handleChangeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
   return (
     <ThemeProvider theme={providerTheme(mode)}>
       <Box>
         <ProviderAppBar
           toggleMode={() => setMode(!mode)}
           toggleDrawer={() => setOpen(!open)}
+          changeLanguage={handleChangeLanguage}
           mode={mode}
           open={open}
+          translate={translate}
+          currentLanguage={i18n.language}
         />
-        <ProviderDrawer open={open} />
+        <ProviderDrawer open={open} translate={translate} />
       </Box>
       <StyledMain open={open}>
         <Container>{children}</Container>

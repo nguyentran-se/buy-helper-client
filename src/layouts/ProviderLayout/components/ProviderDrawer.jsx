@@ -11,8 +11,8 @@ import {
   Typography,
 } from '@mui/material';
 import { Box, styled } from '@mui/system';
-import { INIT_DRAWER_LIST, PROVIDER_DRAWER_WIDTH } from 'constant';
-import React, { useState } from 'react';
+import { initDrawerList, PROVIDER_DRAWER_WIDTH } from 'constant';
+import React, { memo, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const DrawerHeader = styled(Typography)(({ theme }) => ({
@@ -37,9 +37,16 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
   },
 }));
 
-const ProviderDrawer = ({ open = true }) => {
-  const [drawerList, setDrawerList] = useState(INIT_DRAWER_LIST);
+const ProviderDrawer = ({ open, translate }) => {
+  const [drawerList, setDrawerList] = useState(initDrawerList(translate));
+  //set list haved been translated to drawerList
+  useEffect(() => {
+    setDrawerList(initDrawerList(translate));
+  }, [translate]);
 
+  /**
+   * @implement handle open Sublist
+   */
   const handleClickShowSubList = (header, title) => {
     const index = drawerList.findIndex((section) => section.header === header);
     const updatedDrawerList = [...drawerList];
@@ -64,6 +71,7 @@ const ProviderDrawer = ({ open = true }) => {
         '& .MuiDrawer-paper': {
           width: PROVIDER_DRAWER_WIDTH,
           boxSizing: 'border-box',
+          textTransform: 'capitalize',
         },
       }}
       variant="persistent"
@@ -137,4 +145,4 @@ const ProviderDrawer = ({ open = true }) => {
   );
 };
 
-export default ProviderDrawer;
+export default memo(ProviderDrawer);
