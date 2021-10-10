@@ -8,9 +8,9 @@ import {
 import { PATH_NAME } from 'configs';
 import React from 'react';
 
-export const initDrawerList = [
+export const INIT_DRAWER_LIST = [
   {
-    header: 'Account Management',
+    header: 'Provider',
     list: [
       {
         icon: <Dashboard fontSize="large" />,

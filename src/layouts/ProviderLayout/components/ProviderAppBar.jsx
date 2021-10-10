@@ -18,7 +18,7 @@ const StyledAppBar = styled(AppBar, {
 }));
 const ProviderAppBar = ({ toggleDrawer, open }) => {
   return (
-    <StyledAppBar position="sticky" open={open}>
+    <StyledAppBar position="sticky" open={open} elevation={2}>
       <Toolbar>
         <IconButton color="inherit" onClick={toggleDrawer}>
           <Menu fontSize="large" />

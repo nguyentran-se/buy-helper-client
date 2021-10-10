@@ -11,7 +11,7 @@ import {
   Typography,
 } from '@mui/material';
 import { Box, styled } from '@mui/system';
-import { initDrawerList, PROVIDER_DRAWER_WIDTH } from 'constant';
+import { INIT_DRAWER_LIST, PROVIDER_DRAWER_WIDTH } from 'constant';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -25,6 +25,9 @@ const DrawerHeader = styled(Typography)(({ theme }) => ({
 const StyledListItem = styled(ListItem)(({ theme }) => ({
   paddingLeft: 24,
   fontWeight: 700,
+  '& .MuiListItemIcon-root': {
+    minWidth: 40,
+  },
   '&.active': {
     color: theme.palette.primary.main,
     '& .MuiListItemIcon-root': {
@@ -35,7 +38,7 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
 }));
 
 const ProviderDrawer = ({ open = true }) => {
-  const [drawerList, setDrawerList] = useState(initDrawerList);
+  const [drawerList, setDrawerList] = useState(INIT_DRAWER_LIST);
 
   const handleClickShowSubList = (header, title) => {
     const index = drawerList.findIndex((section) => section.header === header);

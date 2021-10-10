@@ -15,7 +15,9 @@ const Orders = lazy(() => import('pages/Orders/Orders'));
 const OrderDetail = lazy(() => import('pages/OrderDetail/OrderDetail'));
 const Buyer = lazy(() => import('pages/Buyer/Buyer'));
 const Cate = lazy(() => import('pages/Cate/Cate'));
-const Provider = lazy(() => import('pages/Provider/Provider'));
+const ProviderAccount = lazy(() =>
+  import('pages/ProviderAccount/ProviderAccount'),
+);
 
 const routes = [
   {
@@ -29,7 +31,7 @@ const routes = [
     exact: true,
     guard: null,
     layout: 'ProviderLayout',
-    component: Provider,
+    component: ProviderAccount,
     requireRoles: null,
   },
   {
