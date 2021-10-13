@@ -15,6 +15,18 @@ const Orders = lazy(() => import('pages/Orders/Orders'));
 const OrderDetail = lazy(() => import('pages/OrderDetail/OrderDetail'));
 const Buyer = lazy(() => import('pages/Buyer/Buyer'));
 const Cate = lazy(() => import('pages/Cate/Cate'));
+const ProviderAccount = lazy(() =>
+  import('pages/ProviderAccount/ProviderAccount'),
+);
+const ProviderAddProduct = lazy(() =>
+  import('pages/ProviderAddProduct/ProviderAddProduct'),
+);
+const ProviderProducts = lazy(() =>
+  import('pages/ProviderProducts/ProviderProducts'),
+);
+const ProviderReport = lazy(() =>
+  import('pages/ProviderReport/ProviderReport'),
+);
 
 const routes = [
   {
@@ -22,6 +34,38 @@ const routes = [
     exact: true,
     layout: 'HomeIntroLayout',
     component: HomeIntro,
+  },
+  {
+    path: PATH_NAME.PROVIDER,
+    exact: true,
+    guard: AuthGuard,
+    layout: 'ProviderLayout',
+    component: ProviderAccount,
+    requireRoles: null,
+  },
+  {
+    path: PATH_NAME.PROVIDER_ADD_PRODUCT,
+    exact: true,
+    guard: AuthGuard,
+    layout: 'ProviderLayout',
+    component: ProviderAddProduct,
+    requireRoles: null,
+  },
+  {
+    path: PATH_NAME.PROVIDER_PRODUCTS,
+    exact: true,
+    guard: AuthGuard,
+    layout: 'ProviderLayout',
+    component: ProviderProducts,
+    requireRoles: null,
+  },
+  {
+    path: PATH_NAME.PROVIDER_REPORT,
+    exact: true,
+    guard: AuthGuard,
+    layout: 'ProviderLayout',
+    component: ProviderReport,
+    requireRoles: null,
   },
   {
     path: PATH_NAME.LOGIN,
@@ -74,7 +118,7 @@ const routes = [
   {
     path: PATH_NAME.ORDER_DETAIL,
     exact: true,
-    // guard: AuthGuard,
+    guard: AuthGuard,
     layout: 'MainLayout',
     component: OrderDetail,
     requireRoles: null,

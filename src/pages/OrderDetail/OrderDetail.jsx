@@ -11,6 +11,7 @@ import {
   Typography,
 } from '@mui/material';
 import productSample from 'assets/images/food-sample.png';
+import { PATH_NAME } from 'configs';
 import React from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -25,7 +26,9 @@ const OrderDetail = () => {
   return (
     <Box sx={{ pt: 1 }}>
       <Typography variant="h5" component="h2" marginBottom={3}>
-        Chi tiết đơn hàng #{slug}{' '}
+        <Link to={PATH_NAME.CATEGORY_GENRE}>Trang chủ</Link> {'>'}{' '}
+        <Link to={PATH_NAME.ORDERS}>Đơn hàng của tôi</Link> {'>'} Chi tiết đơn
+        hàng #{slug}{' '}
       </Typography>
       <Typography variant="h6" gutterBottom>
         Trạng thái đơn hàng

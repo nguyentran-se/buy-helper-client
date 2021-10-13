@@ -1,7 +1,6 @@
-import { EventNoteOutlined, Logout } from '@mui/icons-material';
-import { Avatar, Divider, ListItemIcon, Menu, MenuItem } from '@mui/material';
+import { Menu } from '@mui/material';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 const useMenu = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -11,7 +10,7 @@ const useMenu = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const StyledMenu = () => {
+  const StyledMenu = ({ children }) => {
     return (
       <Menu
         anchorEl={anchorEl}
@@ -48,34 +47,7 @@ const useMenu = () => {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem component={Link} to="/orders">
-          <ListItemIcon>
-            <EventNoteOutlined fontSize="medium" />
-          </ListItemIcon>
-          Đơn hàng của tôi
-        </MenuItem>
-        <MenuItem component={Link} to="/buyer">
-          <Avatar /> Tài khoản của tôi
-        </MenuItem>
-        <Divider />
-        {/* <MenuItem>
-          <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Add another account
-        </MenuItem> */}
-        {/* <MenuItem>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem> */}
-        <MenuItem component={Link} to="/">
-          <ListItemIcon>
-            <Logout fontSize="medium" />
-          </ListItemIcon>
-          Đăng xuất
-        </MenuItem>
+        {children}
       </Menu>
     );
   };

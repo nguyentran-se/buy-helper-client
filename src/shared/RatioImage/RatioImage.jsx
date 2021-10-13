@@ -19,7 +19,7 @@ const ProductCardImg = styled('div')({
 const RatioImage = ({ src, ...rest }) => {
   return (
     <ProductCardImg>
-      <img src={src} {...rest} />
+      <img src={src} {...rest} alt="" />
     </ProductCardImg>
   );
 };
