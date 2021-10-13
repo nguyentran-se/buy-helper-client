@@ -24,6 +24,9 @@ const ProviderAddProduct = lazy(() =>
 const ProviderProducts = lazy(() =>
   import('pages/ProviderProducts/ProviderProducts'),
 );
+const ProviderReport = lazy(() =>
+  import('pages/ProviderReport/ProviderReport'),
+);
 
 const routes = [
   {
@@ -54,6 +57,14 @@ const routes = [
     guard: null,
     layout: 'ProviderLayout',
     component: ProviderProducts,
+    requireRoles: null,
+  },
+  {
+    path: PATH_NAME.PROVIDER_REPORT,
+    exact: true,
+    guard: null,
+    layout: 'ProviderLayout',
+    component: ProviderReport,
     requireRoles: null,
   },
   {
