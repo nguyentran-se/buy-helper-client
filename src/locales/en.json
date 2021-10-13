@@ -14,5 +14,14 @@
   "NAME": "Name",
   "PRICE": "Price",
   "CATEGORY": "Category",
-  "DELETE": "Delete"
+  "DELETE": "Delete",
+  "///": "PROVIDER__ACCOUNT",
+  "ACCOUNT_TYPE": "Account Type",
+  "PHONE": "Phone",
+  "PROVINCE": "Province",
+  "DISTRICT": "District",
+  "WARD": "Ward",
+  "STREET": "Street",
+  "PROFILE": "Profile",
+  "NOT_EDITTED": "The information can NOT be edited now!"
 }

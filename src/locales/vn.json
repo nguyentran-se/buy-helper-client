@@ -14,5 +14,14 @@
   "NAME": "Tên",
   "PRICE": "Giá",
   "CATEGORY": "Thể loại",
-  "DELETE": "Xóa"
+  "DELETE": "Xóa",
+  "///": "PROVIDER__ACCOUNT",
+  "ACCOUNT_TYPE": "Loại Tài Khoản",
+  "PHONE": "Điện Thoại",
+  "PROVINCE": "Tỉnh/Thành Phố",
+  "DISTRICT": "Huyện/Quận",
+  "WARD": "Xã/Phường",
+  "STREET": "Địa Chỉ",
+  "PROFILE": "Thông Tin",
+  "NOT_EDITTED": "Thông tin không thể chỉnh sửa lúc này!"
 }
