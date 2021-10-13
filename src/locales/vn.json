@@ -8,7 +8,8 @@
   "STATISTIC": "Thống kê",
   "TOOLTIP": {
     "LANGUAGE": "Ngôn ngữ",
-    "THEME": "Giao diện"
+    "THEME": "Giao diện",
+    "LOGOUT": "Đăng xuất"
   },
   "//": "PROVIDER__PRODUCTS",
   "NAME": "Tên",

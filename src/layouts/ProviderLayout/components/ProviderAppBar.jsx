@@ -1,4 +1,10 @@
-import { DarkMode, LightMode, Menu, Public } from '@mui/icons-material';
+import {
+  DarkMode,
+  ExitToAppOutlined,
+  LightMode,
+  Menu,
+  Public,
+} from '@mui/icons-material';
 import {
   AppBar,
   Button,
@@ -8,11 +14,12 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material';
-import { styled } from '@mui/system';
+import { Box, styled } from '@mui/system';
 import { LANGUAGE } from 'configs';
 import { PROVIDER_DRAWER_WIDTH } from 'constant';
 import { useMenu } from 'hooks';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const StyledAppBar = styled(AppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -51,7 +58,11 @@ const ProviderAppBar = ({
             <Menu fontSize="large" />
           </IconButton>
         </Tooltip>
-        <Typography variant="h6" component="h2">
+        <Typography
+          variant="h6"
+          component="h2"
+          sx={{ display: ['none', 'block'] }}
+        >
           Provider Dashboard
         </Typography>
         <Tooltip title={translate('TOOLTIP.LANGUAGE')} arrow disableInteractive>
@@ -62,7 +73,9 @@ const ProviderAppBar = ({
             sx={{ ml: 'auto' }}
             size="large"
           >
-            {currentLanguage === LANGUAGE.ENGLISH ? 'English' : 'Tiếng Việt'}
+            <Typography sx={{ display: ['none', 'block'] }}>
+              {currentLanguage === LANGUAGE.ENGLISH ? 'English' : 'Tiếng Việt'}
+            </Typography>
           </Button>
         </Tooltip>
 
@@ -82,6 +95,21 @@ const ProviderAppBar = ({
               <DarkMode fontSize="large" />
             )}
           </IconButton>
+        </Tooltip>
+        <Tooltip title={translate('TOOLTIP.LOGOUT')} arrow disableInteractive>
+          <Box component={Link} to="/">
+            <Button
+              startIcon={<ExitToAppOutlined />}
+              color="error"
+              variant="contained"
+              size="large"
+              sx={{ ml: 1 }}
+            >
+              <Typography sx={{ display: ['none', 'block'] }}>
+                {translate('TOOLTIP.LOGOUT')}
+              </Typography>
+            </Button>
+          </Box>
         </Tooltip>
       </Toolbar>
     </StyledAppBar>

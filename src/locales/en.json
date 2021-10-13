@@ -8,7 +8,8 @@
   "STATISTIC": "Statistic",
   "TOOLTIP": {
     "LANGUAGE": "Language",
-    "THEME": "Theme"
+    "THEME": "Theme",
+    "LOGOUT": "Log out"
   },
   "//": "PROVIDER__PRODUCTS",
   "NAME": "Name",
