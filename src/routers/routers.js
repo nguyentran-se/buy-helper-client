@@ -38,7 +38,7 @@ const routes = [
   {
     path: PATH_NAME.PROVIDER,
     exact: true,
-    guard: null,
+    guard: AuthGuard,
     layout: 'ProviderLayout',
     component: ProviderAccount,
     requireRoles: null,
@@ -46,7 +46,7 @@ const routes = [
   {
     path: PATH_NAME.PROVIDER_ADD_PRODUCT,
     exact: true,
-    guard: null,
+    guard: AuthGuard,
     layout: 'ProviderLayout',
     component: ProviderAddProduct,
     requireRoles: null,
@@ -54,7 +54,7 @@ const routes = [
   {
     path: PATH_NAME.PROVIDER_PRODUCTS,
     exact: true,
-    guard: null,
+    guard: AuthGuard,
     layout: 'ProviderLayout',
     component: ProviderProducts,
     requireRoles: null,
@@ -62,7 +62,7 @@ const routes = [
   {
     path: PATH_NAME.PROVIDER_REPORT,
     exact: true,
-    guard: null,
+    guard: AuthGuard,
     layout: 'ProviderLayout',
     component: ProviderReport,
     requireRoles: null,
