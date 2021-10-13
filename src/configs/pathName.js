@@ -12,7 +12,11 @@ export const PATH_NAME = {
   ORDER_DETAIL: '/orders/detail/:slug',
   CATEGORY: '/category',
   BUYER: '/buyer',
-  SUPPLIER: '/supplier',
+  PROVIDER: '/provider',
+  PROVIDER_ACCOUNT: '/provider',
+  PROVIDER_REPORT: '/provider/report',
+  PROVIDER_PRODUCTS: '/provider/products',
+  PROVIDER_ADD_PRODUCT: '/provider/add-product',
   TOWN_LEADER: '/town-leader',
   CATEGORY_GENRE: '/category/category1',
 };

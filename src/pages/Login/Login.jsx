@@ -30,7 +30,7 @@ const roles = [
     label: 'TỔ TRƯỞNG',
   },
   {
-    value: 'supplier',
+    value: 'provider',
     label: 'NHÀ CUNG CẤP',
   },
 ];
@@ -53,7 +53,7 @@ const Login = () => {
     if (
       formData.account === 'admin' &&
       formData.password === 'admin' &&
-      (formData.role === 'buyer' || 'supplier' || 'town_leader')
+      formData.role === 'buyer'
     ) {
       const userData = { role: formData.role, acc: formData.account };
       setTimeout(() => {
@@ -61,6 +61,22 @@ const Login = () => {
         // setLocalStorage('BhUser', userData);
         // if (formData.role === 'buyer')
         history.replace(PATH_NAME.CATEGORY + '/category1');
+        // else if (formData.role === 'supplier')
+        //   history.replace(PATH_NAME.SUPPLIER);
+        // else if (formData.role === 'town_leader')
+        //   history.replace(PATH_NAME.TOWN_LEADER);
+      }, 1000);
+    } else if (
+      formData.account === 'provider' &&
+      formData.password === 'provider' &&
+      formData.role === 'provider'
+    ) {
+      const userData = { role: formData.role, acc: formData.account };
+      setTimeout(() => {
+        dispatch(loginSuccess(userData));
+        // setLocalStorage('BhUser', userData);
+        // if (formData.role === 'buyer')
+        history.replace(PATH_NAME.PROVIDER);
         // else if (formData.role === 'supplier')
         //   history.replace(PATH_NAME.SUPPLIER);
         // else if (formData.role === 'town_leader')

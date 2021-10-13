@@ -1,38 +1,26 @@
-###########
-# BUILDER #
-###########
+##############
+# BuildStage #
+##############
 
 # pull offical base image
-FROM node:16.5.0-alpine as builder
+FROM node:14.15.4-alpine as build-stage
 
 # set working dir
-WORKDIR /usr/src/app
-
-# add to PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
-
-# install and cache app dependencies
-COPY package.json .
-COPY package-lock.json .
-RUN npm ci
-
-# create build
+WORKDIR /app
 COPY . .
-RUN npm run build
+
+RUN yarn install
+RUN yarn run build
 
 ###########
 #  FINAL  #
 ###########
 
 # base image
-FROM nginx:1.19.4-alpine
-
-# change nginx conf to my conf
-RUN rm -rf /etc/nginx/conf.d
-COPY conf /etc/nginx
+FROM nginx:1.19.4-alpine as production-stage
 
 # copy static files
-COPY --from=builder /usr/src/app/build /usr/share/nginx/html
+COPY --from=build-stage /app/build /usr/share/nginx/html
 
 # export port
 EXPOSE 80
