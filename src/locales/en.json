@@ -9,5 +9,10 @@
   "TOOLTIP": {
     "LANGUAGE": "Language",
     "THEME": "Theme"
-  }
+  },
+  "//": "PROVIDER__PRODUCTS",
+  "NAME": "Name",
+  "PRICE": "Price",
+  "CATEGORY": "Category",
+  "DELETE": "Delete"
 }

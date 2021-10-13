@@ -9,5 +9,10 @@
   "TOOLTIP": {
     "LANGUAGE": "Ngôn ngữ",
     "THEME": "Giao diện"
-  }
+  },
+  "//": "PROVIDER__PRODUCTS",
+  "NAME": "Tên",
+  "PRICE": "Giá",
+  "CATEGORY": "Thể loại",
+  "DELETE": "Xóa"
 }
