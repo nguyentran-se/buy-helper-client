@@ -7,6 +7,7 @@ import {
   TextField,
   Typography,
   Modal,
+  MenuItem,
 } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect, useState } from 'react';
@@ -19,6 +20,7 @@ const ProviderAddProduct = () => {
   const [widget, setWidget] = useState(null);
   const [imageInfo, setImageInfo] = useState(null);
   const [openPreview, setOpenPreview] = useState(false);
+  const [disabledOnSubmit, setDisabledOnSubmit] = useState(false);
 
   const handleOpenUploadWidget = () => {
     if (widget) {
@@ -28,6 +30,7 @@ const ProviderAddProduct = () => {
 
   const handleFormCancel = () => {
     reset(defaultValues);
+    setImageInfo(null);
   };
   /**
    * @implement UploadWidget
@@ -64,7 +67,7 @@ const ProviderAddProduct = () => {
           setImageInfo(null);
         }
         if (!error && result && result.event === 'success') {
-          console.log('Done! Here is the image info: ', result.info);
+          // console.log('Done! Here is the image info: ', result.info);
           setImageInfo(result.info);
         }
       },
@@ -79,6 +82,10 @@ const ProviderAddProduct = () => {
     if (imageInfo) {
       data.url = imageInfo.url;
       console.log(data);
+      setDisabledOnSubmit(true);
+      setTimeout(() => {
+        setDisabledOnSubmit(false);
+      }, 1500);
     }
   };
 
@@ -110,6 +117,28 @@ const ProviderAddProduct = () => {
                   onChange={onChange}
                   value={value}
                 />
+              )}
+            />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Controller
+              name="role"
+              control={control}
+              render={({ field: { onChange } }) => (
+                <TextField
+                  select
+                  label="Category"
+                  defaultValue="cate1"
+                  name="category"
+                  onChange={onChange}
+                  fullWidth
+                  // helperText=""
+                >
+                  {/* {roles.map((option) => ( */}
+                  <MenuItem value="cate1">Cate1</MenuItem>
+                  <MenuItem value="cate2">Cate2</MenuItem>
+                  {/* ))} */}
+                </TextField>
               )}
             />
           </Grid>
@@ -223,10 +252,16 @@ const ProviderAddProduct = () => {
             color="error"
             size="large"
             onClick={handleFormCancel}
+            disabled={disabledOnSubmit}
           >
             Cancel
           </Button>
-          <Button variant="contained" size="large" type="submit">
+          <Button
+            variant="contained"
+            size="large"
+            type="submit"
+            disabled={disabledOnSubmit}
+          >
             Submit
           </Button>
         </Stack>

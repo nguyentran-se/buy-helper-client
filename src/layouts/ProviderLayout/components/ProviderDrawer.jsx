@@ -14,7 +14,7 @@ import { Box, styled } from '@mui/system';
 import { initDrawerList, PROVIDER_DRAWER_WIDTH } from 'constant';
 import React, { memo, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-const StyledDrawer = styled(Drawer)(({ theme }) => ({
+const StyledDrawer = styled(Drawer)({
   width: PROVIDER_DRAWER_WIDTH,
   flexShrink: 0,
   '& .MuiDrawer-paper': {
@@ -26,7 +26,7 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
     //   duration: theme.transitions.duration.leavingScreen,
     // })}`,
   },
-}));
+});
 const DrawerHeader = styled(Typography)(({ theme }) => ({
   ...theme.mixins.toolbar,
   display: 'flex',
