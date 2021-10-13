@@ -109,9 +109,9 @@ const ProviderAddProduct = () => {
               render={({ field: { onChange, value } }) => (
                 <TextField
                   type="text"
-                  label="Product Name"
+                  label={translate('NAME')}
                   required
-                  placeholder="Enter product name"
+                  placeholder={translate('ENTER') + ' ' + translate('NAME')}
                   fullWidth
                   autoFocus
                   onChange={onChange}
@@ -127,11 +127,12 @@ const ProviderAddProduct = () => {
               render={({ field: { onChange } }) => (
                 <TextField
                   select
-                  label="Category"
+                  label={translate('CATEGORY')}
                   defaultValue="cate1"
                   name="category"
                   onChange={onChange}
                   fullWidth
+                  required
                   // helperText=""
                 >
                   {/* {roles.map((option) => ( */}
@@ -150,9 +151,9 @@ const ProviderAddProduct = () => {
               render={({ field: { onChange, value } }) => (
                 <TextField
                   type="text"
-                  label="Price"
+                  label={translate('PRICE')}
                   required
-                  placeholder="Enter price"
+                  placeholder={translate('ENTER') + ' ' + translate('PRICE')}
                   fullWidth
                   onChange={onChange}
                   value={value}
@@ -173,9 +174,9 @@ const ProviderAddProduct = () => {
               render={({ field: { onChange, value } }) => (
                 <TextField
                   type="text"
-                  label="Quantity"
+                  label={translate('QUANTITY')}
                   required
-                  placeholder="Enter quantity"
+                  placeholder={translate('ENTER') + ' ' + translate('QUANTITY')}
                   fullWidth
                   onChange={onChange}
                   value={value}
@@ -201,7 +202,7 @@ const ProviderAddProduct = () => {
               <Typography noWrap>
                 {imageInfo
                   ? `${imageInfo['original_filename']}`
-                  : 'Upload Image'}
+                  : translate('UPLOAD_IMAGE')}
               </Typography>
               {imageInfo && `.${imageInfo.format}`}
             </Button>
@@ -218,7 +219,7 @@ const ProviderAddProduct = () => {
                   variant="contained"
                   onClick={() => setOpenPreview(true)}
                 >
-                  Show preview
+                  {translate('SHOW_PREVIEW')}
                 </Button>
               </Grid>
               <Modal open={openPreview} onClose={() => setOpenPreview(false)}>
@@ -254,7 +255,7 @@ const ProviderAddProduct = () => {
             onClick={handleFormCancel}
             disabled={disabledOnSubmit}
           >
-            Cancel
+            {translate('CANCEL')}
           </Button>
           <Button
             variant="contained"
@@ -262,7 +263,7 @@ const ProviderAddProduct = () => {
             type="submit"
             disabled={disabledOnSubmit}
           >
-            Submit
+            {translate('SUBMIT')}
           </Button>
         </Stack>
       </Box>

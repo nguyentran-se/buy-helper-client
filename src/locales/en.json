@@ -23,5 +23,12 @@
   "WARD": "Ward",
   "STREET": "Street",
   "PROFILE": "Profile",
-  "NOT_EDITTED": "The information can NOT be edited now!"
+  "NOT_EDITTED": "The information can NOT be edited now!",
+  "////": "PROVIDER__ADD",
+  "UPLOAD_IMAGE": "Upload Image",
+  "SHOW_PREVIEW": "Show preview",
+  "CANCEL": "Cancel",
+  "SUBMIT": "Submit",
+  "ENTER": "Enter",
+  "QUANTITY": "Quantity"
 }

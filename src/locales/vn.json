@@ -23,5 +23,12 @@
   "WARD": "Xã/Phường",
   "STREET": "Địa Chỉ",
   "PROFILE": "Thông Tin",
-  "NOT_EDITTED": "Thông tin không thể chỉnh sửa lúc này!"
+  "NOT_EDITTED": "Thông tin không thể chỉnh sửa lúc này!",
+  "////": "PROVIDER__ADD",
+  "UPLOAD_IMAGE": "Tải ảnh lên",
+  "SHOW_PREVIEW": "Xem trước",
+  "CANCEL": "Hủy bỏ",
+  "SUBMIT": "Thêm sản phẩm",
+  "ENTER": "Nhập",
+  "QUANTITY": "Số Lượng"
 }
