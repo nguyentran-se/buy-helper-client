@@ -55,6 +55,7 @@ const PaymentMethods = () => {
                     <img
                       src={p.img}
                       style={{ width: 32, height: 32, marginRight: '12px' }}
+                      alt="payment method"
                     />
                     <Typography variant="body1">{p.des}</Typography>
                   </Box>

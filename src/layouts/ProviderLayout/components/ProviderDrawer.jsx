@@ -14,7 +14,19 @@ import { Box, styled } from '@mui/system';
 import { initDrawerList, PROVIDER_DRAWER_WIDTH } from 'constant';
 import React, { memo, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
+const StyledDrawer = styled(Drawer)(({ theme }) => ({
+  width: PROVIDER_DRAWER_WIDTH,
+  flexShrink: 0,
+  '& .MuiDrawer-paper': {
+    width: PROVIDER_DRAWER_WIDTH,
+    boxSizing: 'border-box',
+    textTransform: 'capitalize',
+    // transition: `${theme.transitions.create(['transform'], {
+    //   easing: theme.transitions.easing.sharp,
+    //   duration: theme.transitions.duration.leavingScreen,
+    // })}`,
+  },
+}));
 const DrawerHeader = styled(Typography)(({ theme }) => ({
   ...theme.mixins.toolbar,
   display: 'flex',
@@ -64,16 +76,16 @@ const ProviderDrawer = ({ open, translate }) => {
   };
 
   return (
-    <Drawer
-      sx={{
-        width: PROVIDER_DRAWER_WIDTH,
-        flexShrink: 0,
-        '& .MuiDrawer-paper': {
-          width: PROVIDER_DRAWER_WIDTH,
-          boxSizing: 'border-box',
-          textTransform: 'capitalize',
-        },
-      }}
+    <StyledDrawer
+      // sx={{
+      //   width: PROVIDER_DRAWER_WIDTH,
+      //   flexShrink: 0,
+      //   '& .MuiDrawer-paper': {
+      //     width: PROVIDER_DRAWER_WIDTH,
+      //     boxSizing: 'border-box',
+      //     textTransform: 'capitalize',
+      //   },
+      // }}
       variant="persistent"
       anchor="left"
       open={open}
@@ -141,7 +153,7 @@ const ProviderDrawer = ({ open, translate }) => {
           </Box>
         ))}
       </List>
-    </Drawer>
+    </StyledDrawer>
   );
 };
 

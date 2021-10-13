@@ -18,13 +18,18 @@ const StyledAppBar = styled(AppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
   left: 0,
-  transition: theme.transitions.create(['left', 'width'], {
+  transition: theme.transitions.create(['margin'], {
     easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
+    duration: theme.transitions.duration.leavingScreen - 135,
   }),
+
   ...(open && {
     width: `calc(100% - ${PROVIDER_DRAWER_WIDTH}px)`,
     left: PROVIDER_DRAWER_WIDTH,
+    transition: theme.transitions.create(['left', 'width'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
   }),
 }));
 
