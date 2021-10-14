@@ -73,7 +73,7 @@ const StyledMain = styled('main', {
     }),
   }),
 }));
-const ProviderLayout = ({ children }) => {
+const ProviderLayout = ({ children, type }) => {
   const { i18n, t: translate } = useTranslation();
   const [open, setOpen] = useState(true);
   // true:light, false:dark
@@ -97,8 +97,9 @@ const ProviderLayout = ({ children }) => {
           open={open}
           translate={translate}
           currentLanguage={i18n.language}
+          type={type}
         />
-        <ProviderDrawer open={open} translate={translate} />
+        <ProviderDrawer open={open} translate={translate} type={type} />
       </Box>
       <StyledMain open={open}>
         <Container>{children}</Container>

@@ -49,12 +49,12 @@ const StyledListItem = styled(ListItem)(({ theme }) => ({
   },
 }));
 
-const ProviderDrawer = ({ open, translate }) => {
+const ProviderDrawer = ({ open, translate, type }) => {
   const [drawerList, setDrawerList] = useState(initDrawerList(translate));
   //set list haved been translated to drawerList
   useEffect(() => {
-    setDrawerList(initDrawerList(translate));
-  }, [translate]);
+    setDrawerList(initDrawerList(translate, type));
+  }, [translate, type]);
 
   /**
    * @implement handle open Sublist
