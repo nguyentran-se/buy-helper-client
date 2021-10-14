@@ -18,5 +18,7 @@ export const PATH_NAME = {
   PROVIDER_PRODUCTS: '/provider/products',
   PROVIDER_ADD_PRODUCT: '/provider/add-product',
   TOWN_LEADER: '/town-leader',
+  TOWN_LEADER_WATCH: '/town-leader/watch',
   CATEGORY_GENRE: '/category/category1',
+  FORGOT_PASSWORD: '/forgot-password',
 };

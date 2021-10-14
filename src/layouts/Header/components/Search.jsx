@@ -5,6 +5,7 @@ import { Badge, Button, IconButton, InputBase, Tooltip } from '@mui/material';
 import { ShoppingCartOutlined } from '@mui/icons-material';
 import { Box } from '@mui/system';
 import { Link } from 'react-router-dom';
+import { PATH_NAME } from 'configs';
 
 const StyledSearch = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -67,7 +68,7 @@ const Search = () => {
         />
         <StyledButton startIcon={<SearchIcon />}>Tìm kiếm</StyledButton>
       </StyledSearch>
-      <Box component={Link} to="/checkout/cart">
+      <Box component={Link} to={PATH_NAME.CART}>
         <Tooltip title="Giỏ hàng" arrow disableInteractive>
           <IconButton size="small" color="inherit">
             <Badge badgeContent={17} color="error">

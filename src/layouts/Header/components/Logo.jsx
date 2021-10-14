@@ -23,10 +23,10 @@ const StyledLogo = styled(Link)({
     objectFit: 'cover',
   },
 });
-const Logo = () => {
+const Logo = ({ hasHref = true }) => {
   return (
     <div style={{ width: WIDTH_LOGO, height: HEIGHT_LOGO, flexShrink: 0 }}>
-      <StyledLogo to={PATH_NAME.CATEGORY_GENRE}>
+      <StyledLogo to={hasHref ? PATH_NAME.CATEGORY_GENRE : '#'}>
         <img src={logo} alt="" />
       </StyledLogo>
     </div>

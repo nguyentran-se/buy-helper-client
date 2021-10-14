@@ -6,6 +6,9 @@ const Error404View = lazy(() => import('pages/Error404View/Error404View'));
 const HomeIntro = lazy(() => import('pages/HomeIntro/HomeIntro'));
 const Login = lazy(() => import('pages/Login/Login'));
 const Register = lazy(() => import('pages/Register/Register'));
+const ForgotPassword = lazy(() =>
+  import('pages/ForgotPassword/ForgotPassword'),
+);
 const Cart = lazy(() => import('pages/Cart/Cart'));
 const Payment = lazy(() => import('pages/Payment/Payment'));
 const PaymentSuccess = lazy(() =>
@@ -14,6 +17,10 @@ const PaymentSuccess = lazy(() =>
 const Orders = lazy(() => import('pages/Orders/Orders'));
 const OrderDetail = lazy(() => import('pages/OrderDetail/OrderDetail'));
 const Buyer = lazy(() => import('pages/Buyer/Buyer'));
+const TownLeader = lazy(() => import('pages/TownLeader/TownLeader'));
+const TownLeaderWatch = lazy(() =>
+  import('pages/TownLeaderWatch/TownLeaderWatch'),
+);
 const Cate = lazy(() => import('pages/Cate/Cate'));
 const ProviderAccount = lazy(() =>
   import('pages/ProviderAccount/ProviderAccount'),
@@ -34,6 +41,22 @@ const routes = [
     exact: true,
     layout: 'HomeIntroLayout',
     component: HomeIntro,
+  },
+  {
+    path: PATH_NAME.TOWN_LEADER,
+    exact: true,
+    guard: AuthGuard,
+    layout: 'TownLeaderLayout',
+    component: TownLeader,
+    requireRoles: null,
+  },
+  {
+    path: PATH_NAME.TOWN_LEADER_WATCH,
+    exact: true,
+    guard: AuthGuard,
+    layout: 'TownLeaderLayout',
+    component: TownLeaderWatch,
+    requireRoles: null,
   },
   {
     path: PATH_NAME.PROVIDER,
@@ -81,6 +104,14 @@ const routes = [
     guard: null,
     layout: 'RegisterLayout',
     component: Register,
+    requireRoles: null,
+  },
+  {
+    path: PATH_NAME.FORGOT_PASSWORD,
+    exact: true,
+    guard: null,
+    layout: 'ForgotPasswordLayout',
+    component: ForgotPassword,
     requireRoles: null,
   },
   {
