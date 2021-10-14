@@ -26,7 +26,7 @@ const roles = [
     label: 'NGƯỜI MUA HÀNG',
   },
   {
-    value: 'town_leader',
+    value: 'townleader',
     label: 'TỔ TRƯỞNG',
   },
   {
@@ -51,8 +51,8 @@ const Login = () => {
     // console.log(formData);
     //fake login here
     if (
-      formData.account === 'admin' &&
-      formData.password === 'admin' &&
+      formData.account === 'buyer' &&
+      formData.password === 'buyer' &&
       formData.role === 'buyer'
     ) {
       const userData = { role: formData.role, acc: formData.account };
@@ -77,6 +77,22 @@ const Login = () => {
         // setLocalStorage('BhUser', userData);
         // if (formData.role === 'buyer')
         history.replace(PATH_NAME.PROVIDER);
+        // else if (formData.role === 'supplier')
+        //   history.replace(PATH_NAME.SUPPLIER);
+        // else if (formData.role === 'town_leader')
+        //   history.replace(PATH_NAME.TOWN_LEADER);
+      }, 1000);
+    } else if (
+      formData.account === 'townleader' &&
+      formData.password === 'townleader' &&
+      formData.role === 'townleader'
+    ) {
+      const userData = { role: formData.role, acc: formData.account };
+      setTimeout(() => {
+        dispatch(loginSuccess(userData));
+        // setLocalStorage('BhUser', userData);
+        // if (formData.role === 'buyer')
+        history.replace(PATH_NAME.TOWN_LEADER);
         // else if (formData.role === 'supplier')
         //   history.replace(PATH_NAME.SUPPLIER);
         // else if (formData.role === 'town_leader')
@@ -186,7 +202,7 @@ const Login = () => {
           Bạn chưa có tài khoản?{' '}
           <Typography
             component={Link}
-            to="/register"
+            to={PATH_NAME.REGISTER}
             style={{ color: '#8BC34A', fontWeight: '600' }}
           >
             Đăng ký
@@ -194,7 +210,7 @@ const Login = () => {
         </Typography>
         <Typography
           component={Link}
-          to="/forgot-password"
+          to={PATH_NAME.FORGOT_PASSWORD}
           style={{ color: '#8BC34A', fontWeight: '600' }}
         >
           Quên mật khẩu?

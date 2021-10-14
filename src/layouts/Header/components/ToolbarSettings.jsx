@@ -6,6 +6,7 @@ import React from 'react';
 import { EventNoteOutlined, Logout } from '@mui/icons-material';
 import { Avatar, Divider, ListItemIcon } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { PATH_NAME } from 'configs';
 const StyledList = styled(List)(({ theme }) => ({
   display: 'flex',
   marginLeft: 'auto',
@@ -44,13 +45,13 @@ const ToolbarSettings = () => {
           </IconButton>
         </Tooltip>
         <StyledMenu>
-          <MenuItem component={Link} to="/orders">
+          <MenuItem component={Link} to={PATH_NAME.ORDERS}>
             <ListItemIcon>
               <EventNoteOutlined fontSize="medium" />
             </ListItemIcon>
             Đơn hàng của tôi
           </MenuItem>
-          <MenuItem component={Link} to="/buyer">
+          <MenuItem component={Link} to={PATH_NAME.BUYER}>
             <Avatar /> Tài khoản của tôi
           </MenuItem>
           <Divider />
@@ -66,7 +67,7 @@ const ToolbarSettings = () => {
           </ListItemIcon>
           Settings
         </MenuItem> */}
-          <MenuItem component={Link} to="/">
+          <MenuItem component={Link} to={PATH_NAME.ROOT}>
             <ListItemIcon>
               <Logout fontSize="medium" />
             </ListItemIcon>

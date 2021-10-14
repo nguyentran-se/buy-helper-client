@@ -15,7 +15,7 @@ import {
   Typography,
 } from '@mui/material';
 import { Box, styled } from '@mui/system';
-import { LANGUAGE } from 'configs';
+import { LANGUAGE, PATH_NAME, USER_ROLE } from 'configs';
 import { PROVIDER_DRAWER_WIDTH } from 'constant';
 import { useMenu } from 'hooks';
 import React from 'react';
@@ -48,6 +48,7 @@ const ProviderAppBar = ({
   changeLanguage,
   translate,
   currentLanguage,
+  type,
 }) => {
   const { handleClickToShowMenu, StyledMenu } = useMenu();
   return (
@@ -63,32 +64,46 @@ const ProviderAppBar = ({
           component="h2"
           sx={{ display: ['none', 'block'] }}
         >
-          Provider Dashboard
+          {type === USER_ROLE.TOWN_LEADER ? 'Town Leader' : 'Provider'}{' '}
+          Dashboard
         </Typography>
-        <Tooltip title={translate('TOOLTIP.LANGUAGE')} arrow disableInteractive>
-          <Button
-            startIcon={<Public fontSize="large" />}
-            color="inherit"
-            onClick={handleClickToShowMenu}
-            sx={{ ml: 'auto' }}
-            size="large"
-          >
-            <Typography sx={{ display: ['none', 'block'] }}>
-              {currentLanguage === LANGUAGE.ENGLISH ? 'English' : 'Tiếng Việt'}
-            </Typography>
-          </Button>
-        </Tooltip>
-
-        <StyledMenu>
-          <MenuItem onClick={() => changeLanguage(LANGUAGE.ENGLISH)}>
-            English
-          </MenuItem>
-          <MenuItem onClick={() => changeLanguage(LANGUAGE.VIETNAMESE)}>
-            Tiếng Việt
-          </MenuItem>
-        </StyledMenu>
+        {type !== USER_ROLE.TOWN_LEADER && (
+          <>
+            <Tooltip
+              title={translate('TOOLTIP.LANGUAGE')}
+              arrow
+              disableInteractive
+            >
+              <Button
+                startIcon={<Public fontSize="large" />}
+                color="inherit"
+                onClick={handleClickToShowMenu}
+                sx={{ ml: 'auto' }}
+                size="large"
+              >
+                <Typography sx={{ display: ['none', 'block'] }}>
+                  {currentLanguage === LANGUAGE.ENGLISH
+                    ? 'English'
+                    : 'Tiếng Việt'}
+                </Typography>
+              </Button>
+            </Tooltip>
+            <StyledMenu>
+              <MenuItem onClick={() => changeLanguage(LANGUAGE.ENGLISH)}>
+                English
+              </MenuItem>
+              <MenuItem onClick={() => changeLanguage(LANGUAGE.VIETNAMESE)}>
+                Tiếng Việt
+              </MenuItem>
+            </StyledMenu>
+          </>
+        )}
         <Tooltip title={translate('TOOLTIP.THEME')} arrow disableInteractive>
-          <IconButton color="inherit" onClick={toggleMode}>
+          <IconButton
+            color="inherit"
+            onClick={toggleMode}
+            sx={{ ml: type === USER_ROLE.TOWN_LEADER ? 'auto' : 'unset' }}
+          >
             {mode ? (
               <LightMode fontSize="large" />
             ) : (
@@ -97,7 +112,7 @@ const ProviderAppBar = ({
           </IconButton>
         </Tooltip>
         <Tooltip title={translate('TOOLTIP.LOGOUT')} arrow disableInteractive>
-          <Box component={Link} to="/">
+          <Box component={Link} to={PATH_NAME.ROOT}>
             <Button
               startIcon={<ExitToAppOutlined />}
               color="error"

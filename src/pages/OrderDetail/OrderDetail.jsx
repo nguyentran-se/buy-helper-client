@@ -125,7 +125,7 @@ const OrderDetail = () => {
             <Button
               variant="text"
               component={Link}
-              to="/orders"
+              to={PATH_NAME.ORDERS}
               sx={{
                 textTransform: 'none',
                 color: (theme) => `${theme.palette.primary.main} !important`,
