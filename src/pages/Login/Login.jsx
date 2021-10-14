@@ -186,7 +186,7 @@ const Login = () => {
           Bạn chưa có tài khoản?{' '}
           <Typography
             component={Link}
-            to="/register"
+            to={PATH_NAME.REGISTER}
             style={{ color: '#8BC34A', fontWeight: '600' }}
           >
             Đăng ký
@@ -194,7 +194,7 @@ const Login = () => {
         </Typography>
         <Typography
           component={Link}
-          to="/forgot-password"
+          to={PATH_NAME.FORGOT_PASSWORD}
           style={{ color: '#8BC34A', fontWeight: '600' }}
         >
           Quên mật khẩu?

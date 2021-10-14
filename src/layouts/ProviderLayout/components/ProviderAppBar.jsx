@@ -15,7 +15,7 @@ import {
   Typography,
 } from '@mui/material';
 import { Box, styled } from '@mui/system';
-import { LANGUAGE } from 'configs';
+import { LANGUAGE, PATH_NAME } from 'configs';
 import { PROVIDER_DRAWER_WIDTH } from 'constant';
 import { useMenu } from 'hooks';
 import React from 'react';
@@ -97,7 +97,7 @@ const ProviderAppBar = ({
           </IconButton>
         </Tooltip>
         <Tooltip title={translate('TOOLTIP.LOGOUT')} arrow disableInteractive>
-          <Box component={Link} to="/">
+          <Box component={Link} to={PATH_NAME.ROOT}>
             <Button
               startIcon={<ExitToAppOutlined />}
               color="error"

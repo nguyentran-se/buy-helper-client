@@ -1,6 +1,7 @@
 import { LockOpenOutlined } from '@mui/icons-material';
 import { Avatar, Button, Stack, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
+import { PATH_NAME } from 'configs';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
@@ -107,7 +108,7 @@ const Register = () => {
           Bạn đã có tài khoản?{' '}
           <Typography
             component={Link}
-            to="/login"
+            to={PATH_NAME.LOGIN}
             style={{ color: '#8BC34A', fontWeight: '600' }}
           >
             Đăng nhập
@@ -115,7 +116,7 @@ const Register = () => {
         </Typography>
         <Typography
           component={Link}
-          to="/forgot-password"
+          to={PATH_NAME.FORGOT_PASSWORD}
           style={{ color: '#8BC34A', fontWeight: '600' }}
         >
           Quên mật khẩu?
