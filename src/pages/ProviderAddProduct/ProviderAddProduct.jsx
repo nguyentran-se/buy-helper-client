@@ -81,7 +81,7 @@ const ProviderAddProduct = () => {
   const handleFormSubmit = (data) => {
     if (imageInfo) {
       data.url = imageInfo.url;
-      console.log(data);
+      // console.log(data);
       setDisabledOnSubmit(true);
       setTimeout(() => {
         setDisabledOnSubmit(false);
