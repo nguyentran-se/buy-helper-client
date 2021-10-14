@@ -1,4 +1,4 @@
-import { LockOutlined } from '@mui/icons-material';
+import { LockOpenOutlined } from '@mui/icons-material';
 import { Avatar, Button, Stack, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
   const { handleSubmit, control } = useForm();
-  const handleRegisterForm = (data) => {
+  const handleRegisterForm = () => {
     // console.log(data);
   };
   return (
@@ -21,7 +21,7 @@ const Register = () => {
         }}
       >
         <Avatar sx={{ m: 1, bgcolor: '#8BC34A' }}>
-          <LockOutlined />
+          <LockOpenOutlined />
         </Avatar>
         <Typography component="h1" variant="h5">
           Đăng ký BuyHelper

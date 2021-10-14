@@ -19,4 +19,5 @@ export const PATH_NAME = {
   PROVIDER_ADD_PRODUCT: '/provider/add-product',
   TOWN_LEADER: '/town-leader',
   CATEGORY_GENRE: '/category/category1',
+  FORGOT_PASSWORD: '/forgot-password',
 };
